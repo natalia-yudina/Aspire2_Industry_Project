@@ -33,7 +33,7 @@
         {
           title: 'Conference',
           start: '2021-05-11',
-        
+          end: '2021-05-13'
         },
         {
           title: 'Meeting',
