@@ -10,6 +10,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"> </script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
    
-   
-    
