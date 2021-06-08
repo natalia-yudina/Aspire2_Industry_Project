@@ -14,6 +14,9 @@
 
     $query = mysqli_query($mysqli, "INSERT class (id_course, id_user, weekday, start_time, end_time) VALUES ('$id_course', '$id_user', '$day', '$start_time', '$end_time')");
 
+    // NI 08-06-2021 begin
+    header('Content-type: application/json; charset=utf-8');
+    // NI 08-06-2021 end    
     $massiv_jasone['resultOK'] = true;
     $massiv_jasone['message']  = "OK";
     $jason_encode              = json_encode($massiv_jasone);

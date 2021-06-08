@@ -14,5 +14,5 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-   
+    <!-- SweetAlert CDN     NI 08-06-2021-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

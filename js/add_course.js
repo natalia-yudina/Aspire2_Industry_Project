@@ -23,6 +23,14 @@ $(document).ready(function() {
                     $('#sdate').val('');
                     $('#edate').val('');
 
+                    // NI 08-06-2021 begin
+                    Swal.fire(
+                        'Congratulations!',
+                        'Record has just been inserted',
+                        'success'
+                    )
+                    // NI 08-06-2021 end
+
                 } else {
                   $('#cname').val('');
                   $('#sdate').val('');

@@ -62,4 +62,5 @@ function closeNav() {
 
   </body>
 	<script src="js/add_course.js"></script>
+
 </html>
