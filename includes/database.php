@@ -55,4 +55,22 @@ function getHolidayRecords() {
 }
 
 // NI 08-06-2021 end
+
+// KU 09/06/2021 begin
+function getAvailabilityRecords() {
+
+	$sql 	= "SELECT class.weekday, course.course_name, class.start_time, class.end_time
+	           FROM class
+			   INNER JOIN course
+			   ON class.id_course=course.id_course";
+	$result = dbQuery($sql);
+	$records = array();
+	while($row = dbFetchAssoc($result)) {
+		extract($row);
+		$records[] = array("wday" => $weekday, "cname" => $course_name,"stime" => $start_time,"etime" => $end_time,"wday" => $weekday);
+	}
+	return $records;
+}
+
+// KU 09/06/2021 end
  ?>
