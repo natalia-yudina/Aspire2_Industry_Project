@@ -1,5 +1,8 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
+    // NI 08-06-2021 begin
+    // include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
+	  require_once 'config.php';
+    // NI 08-06-2021 end
 ?>
 
 <!doctype html>
@@ -62,4 +65,5 @@ function closeNav() {
 
   </body>
 	<script src="js/add_course.js"></script>
+
 </html>

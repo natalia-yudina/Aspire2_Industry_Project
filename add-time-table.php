@@ -1,5 +1,8 @@
 <?php
-	 include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
+	 // NI 08-06-2021 begin
+	 // include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
+	 require_once 'config.php';
+	 // NI 08-06-2021 end
 ?>
 
 <!doctype html>
@@ -33,7 +36,11 @@
       <option>Jhone Doe</option> -->
 			<option value="0">-Select-</option>
 			<?php
-			$query = $mysqli->query("SELECT id_user, last_name FROM users");
+			// NI 08-06-2021 begin
+			// $query = $mysqli->query("SELECT id_user, last_name FROM users");
+			$sql="SELECT id_user, last_name FROM users";
+			$query = dbQuery($sql);
+			// NI 08-06-2021 end
 			while($row = mysqli_fetch_assoc($query)) {
 			$selected = ($row['id_user'] == $myrow['last_name']) ? ' selected' : '';
 			echo "<option ".$selected." value=".$row['id_user'].">".$row['last_name']."</option>";
@@ -50,7 +57,11 @@
             <option>Green Fleet</option> -->
       			<option value="0">-Select-</option>
       			<?php
-      $query = $mysqli->query("SELECT id_course, course_name FROM course");
+			// NI 08-06-2021 begin
+			// $query = $mysqli->query("SELECT id_course, course_name FROM course");
+			$sql="SELECT id_course, course_name FROM course";
+			$query = dbQuery($sql);
+			// NI 08-06-2021 end
       while($row = mysqli_fetch_assoc($query)) {
       $selected = ($row['id_course'] == $myrow['course_name']) ? ' selected' : '';
       echo "<option ".$selected." value=".$row['id_course'].">".$row['course_name']."</option>";
@@ -103,4 +114,5 @@ function closeNav() {
   <!-- NI 03-06-2021 begin -->
   	<script src="js/add_class.js"></script>
   <!-- NI 03-06-2021 end -->
+
 </html>
