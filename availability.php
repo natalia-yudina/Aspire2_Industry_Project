@@ -15,7 +15,7 @@
     <!-- END Top Navbar -->
 
     <!-- Sidebar -->
-    <?php include('includes/user-sidebar.php'); ?>
+    <?php include('includes/sidebar.php'); ?>
     <!-- END Sidebar-->
 <div class="content-wrapper">
 <section class="content">
