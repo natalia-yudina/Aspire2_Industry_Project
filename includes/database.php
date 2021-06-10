@@ -58,13 +58,8 @@ function getHolidayRecords() {
 
 // KU 09/06/2021 begin
 function getAvailabilityRecords() {
-<<<<<<< HEAD
-	
-	$sql 	= "SELECT class.weekday, course.course_name, class.start_time, class.end_time 
-=======
 
 	$sql 	= "SELECT class.weekday, course.course_name, class.start_time, class.end_time
->>>>>>> 743b9eff940122e6cdb2906ea509930366321662
 	           FROM class
 			   INNER JOIN course
 			   ON class.id_course=course.id_course";
@@ -78,9 +73,4 @@ function getAvailabilityRecords() {
 }
 
 // KU 09/06/2021 end
-<<<<<<< HEAD
-
-
-=======
- ?>
->>>>>>> 743b9eff940122e6cdb2906ea509930366321662
+?>
