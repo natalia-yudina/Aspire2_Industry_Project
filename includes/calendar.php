@@ -51,7 +51,7 @@ $(function () {
 				}
 			});
 		},
-
+    selectable: true,
 		eventAfterRender : function(ev, element, view) {
 			if(ev.block == true) {
 				var start = ev.start.format();

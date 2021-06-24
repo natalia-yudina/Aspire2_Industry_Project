@@ -5,6 +5,10 @@
 
 
 <?php
+ // NI 24-06-2021 begin
+ require '../vendor/autoload.php';
+ use Carbon\Carbon;
+ // NI 24-06-2021 end
  require_once '../config.php';
  // NI 10-06-2021 begin
  require_once 'Booking.php';
@@ -73,7 +77,63 @@ function calendarView() {
 		$b->className = 'fc-disabled';
 		$bookings[] = $b;
 	}//while
+
+  // NI 24-06-2021 begin
+  $sql1	= "SELECT c.id_course AS id_course, c.start_date AS start_date, c.end_date AS end_date
+             			   FROM course c
+             			   WHERE c.start_date <= '$end' AND c.end_date >= '$start'";
+
+    $result1 = dbQuery($sql1);
+    while($row = dbFetchAssoc($result1)) {
+      	extract($row);
+        $start_calculate = max($start_date, $start);
+        $end_calculate = min($end_date, $end);
+        $active_courses[] =  array($id_course, $start_calculate, $end_calculate);
+    }
+
+  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time
+  			   FROM course c JOIN class cl ON c.id_course = cl.id_course
+  			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start')";
+  $result2 = dbQuery($sql2);
+           while($row = dbFetchAssoc($result2)) {
+             	extract($row);
+
+              foreach($active_courses as $val_arr) {
+                $index = array_search($course_from_class,$val_arr,true);
+                if ($index !== false) {
+                  $start_class = $val_arr[1];
+                  $end_class = $val_arr[2];
+                  unset($val_arr);
+                }
+              }
+
+              $reffulldate = $start_class . ' ' . $start_time;
+              $timestamp = strtotime($reffulldate);
+
+              $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
+
+              $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster);
+              $date_calculate_roster_copy = $date_calculate_roster_new->toImmutable();
+
+               while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
+               {
+                  $book = new Booking();
+                  // $mutable = $date_calculate_roster_copy->isMutable();
+                  $book->title = $date_calculate_roster1 . $course_name;
+                  $book->start = $date_calculate_roster_copy;
+                  $bgClr = '#f39c12';
+                  $book->backgroundColor = $bgClr;
+                  $book->borderColor = $bgClr;
+                  $bookings[] = $book;
+                  $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
+
+               }
+
+           }
+
+  // NI 24-06-2021 end
 	echo json_encode($bookings);
-}
  // NI 10-06-2021 end
+}
+
 ?>
