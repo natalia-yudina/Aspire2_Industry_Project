@@ -7,7 +7,6 @@ $records = getHolidayRecords();
 ?>
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Holiday List</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">

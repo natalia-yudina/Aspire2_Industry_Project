@@ -7,23 +7,26 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-  <?php include('includes/head.php'); ?>
-  </head>
-  <body>
 
-      <!-- Top Navbar -->
-      <?php include('includes/nav.php'); ?>
-    <!-- END Top Navbar -->
+<head>
+    <?php include('includes/head.php'); ?>
+</head>
 
-    <!-- Sidebar -->
-    <?php include('includes/sidebar.php'); ?>
-    <!-- END Sidebar-->
-      <div id="main">
-
-      <div class="d-flex justify-content-center pt-5">
-<div class="col-md-6">
-<h2>Add Time Table</h2>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <?php $page = 'add-time-table';  include('includes/sidebar.php'); ?>
+        <!-- Sidebar END -->
+        
+        
+        <div id="page-content-wrapper">
+            <!-- Top Navbar -->
+            <?php include('includes/nav.php'); ?>
+            <!-- Top Navbar END -->
+            <!-- Content -->
+            <div class="container-fluid px-5">
+                <div class="row d-flex justify-content-center g-3 my-2 content-bg">
+                    <div class="col-md-6 ">
 <!-- NI 03-06-2021 begin -->
 <!-- <form action="/action_page.php"> -->
 <form>
@@ -95,24 +98,22 @@
     		<button type="button" class="btn btn-dark mt-4 mb-5 add_new_class"> Add Class </button>
     <!-- NI 03-06-2021 end -->
   </form>
-</div>
-      </div>
-      </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Content END -->
+        </div>
+    </div>
 
-      <script>
-      function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-      </script>
-
-  </body>
-  <!-- NI 03-06-2021 begin -->
-  	<script src="js/add_class.js"></script>
+    <!-- Sidebar JS -->
+    <script type = "text/javascript" src="js/sidebar.js"></script>  
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+    
+</body>
+<!-- NI 03-06-2021 begin -->
+<script src="js/add_class.js"></script>
   <!-- NI 03-06-2021 end -->
-
 </html>
