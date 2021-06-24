@@ -19,7 +19,7 @@ $records = getAvailabilityRecords();
         <th>Course Name</th>
         <th>Start Time</th>
         <th>End Time</th>
-        
+        <div class="box-body">
       </tr>
       <?php
 	  $idx = 1;
