@@ -5,6 +5,7 @@
 
 <?php
 $records = getAvailabilityRecords();
+//Kerem privet
 ?>
 <div class="box">
   <div class="box-header with-border">
