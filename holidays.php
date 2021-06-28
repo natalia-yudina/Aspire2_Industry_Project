@@ -31,9 +31,7 @@
                     <div class="col-md-6 pb-5">
                    
                     <?php include('holidayform.php'); ?>
-</br>
-</br>
-</br>
+     <hr>
                     <?php include('holidayslist.php'); ?>
                     </div>
                 </div>

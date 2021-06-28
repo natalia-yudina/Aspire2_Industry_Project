@@ -5,11 +5,8 @@
 <?php
 $records = getHolidayRecords();
 ?>
-<div class="box">
-  <div class="box-header with-border">
-  </div>
-  <!-- /.box-header -->
-  <div class="box-body">
+    </hr>
+    <h5 class="mb-2">Active Holidays</h5>
     <table class="table table-bordered">
       <tr>
         <th style="width: 10px">#</th>
@@ -26,17 +23,17 @@ $records = getHolidayRecords();
         <td><?php echo $idx++; ?></td>
         <td><?php echo $hdate; ?></a></td>
         <td><?php echo $hreason; ?></td>
-        <td><a href="javascript:deleteHoliday('<?php echo $hid ?>');">Delete</a></td>
+        <td><a href="javascript:deleteHoliday('<?php echo $hid ?>');">Delete<i class="fas fa-trash p-2"></i></a></td>
       </tr>
       <?php } ?>
     </table>
-  </div>
+  
   <!-- /.box-body -->
   <div class="box-footer clearfix">
     <?php
     // echo generateHolidayPagination();
     ?> </div>
-</div>
+
 <!-- /.box -->
 <script language="javascript">
 function deleteHoliday(hid) {

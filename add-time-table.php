@@ -75,7 +75,7 @@
   </div>
   <div class="form-group pt-3">
     <label for="day">Choose a Day</label>
-    <select class="form-control" id="day">
+    <select class="form-select" id="day">
       <option>Monday</option>
       <option>Tuesday</option>
       <option>Wednesday</option>
@@ -93,9 +93,16 @@
       <label for="etime">End</label>
       <input type="time" class="form-control" id="etime" name="etime">
     </div>
+    <div class="form-group pt-3">
+    <label for="colorpicker">Select a Class Color</label>
+      <span class="d-flex "><input class="colorPicker" type='color' id='colorPicker' value="#FFC817"></span>
+    </div>
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
-    		<button type="button" class="btn btn-dark mt-4 mb-5 add_new_class"> Add Class </button>
+        
+        <button type="button" class="btn add_new_class"> Add <i class="fas fa-plus "></i></button>
+        
+    		
     <!-- NI 03-06-2021 end -->
   </form>
                     </div>

@@ -17,6 +17,7 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <?php $page = 'add-course';  include('includes/sidebar.php'); ?>
+        
         <!-- Sidebar END -->
         
         
@@ -47,7 +48,7 @@
     </div>
 <!-- NI 02-06-2021 begin -->
     <!-- <button type="submit" class="btn btn-dark mt-4 "> Add Course </button> -->
-		<button type="button" class="btn btn-dark mt-4 add_new_course"> Add Course </button>
+		<button type="button" class="btn add_new_course"> Add <i class="fas fa-plus "></i> </button>
 <!-- NI 02-06-2021 end -->
   </form>
                     </div>

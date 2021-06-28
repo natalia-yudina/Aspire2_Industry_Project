@@ -1,12 +1,18 @@
 :root {
   --main-bg-color: #009d63;
   --main-text-color: #1F1F1F;
-  --second-text-color: #8e8d8e;
-  --second-bg-color: #c1efde;
-  --brand-text-color: #FFC817;
-  --content-bg-color: #e9ecef;
+  --second-text-color: #737373;
+  --second-bg-color: #e7e7e7;
+  --brand-text-color: #fafafa;
+  --content-bg-color: #121212;
+  --ui-text-color: #FFC817;
+
 }
 
+body {
+  color: #fafafa;
+ background-color: #0a0a0a; 
+}
 .primary-text {
   color: var(--main-text-color);
 }
@@ -29,23 +35,79 @@
 
 .content-bg {
 background-color: var(--content-bg-color);
-border-radius: 10px;
+border-radius: 15px;
+box-shadow: rgba(0, 0, 0) 0px 4px 12px;
+}
+
+.ui-text {
+  color: var(--ui-text-color);
 }
 
 .rounded-full {
   border-radius: 100%;
 }
 
+.navbar h2 {
+  color:#fafafa;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.colorPicker {
+ width: 5rem;
+ height: 2rem;
+ background-color:#121212;
+  
+}
+
+
+.btn {
+  width: 10rem;
+  line-height: 2;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 35px;
+  margin-top: 35px;
+  border-radius: 50px;
+  background-color: #f3e6e8;
+  background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+}
+
+table th{
+  color: #737373;
+}
+
+table tr{
+  color: #fafafa;
+}
+
+table a {
+  color: #ff6060;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.fa, .fas {
+  font-weight: 900;
+  font-size: 15px;
+}
+
 #wrapper {
   overflow-x: hidden;
-  background-color: #ffffff;
+  
 }
 
 #sidebar-wrapper {
-  min-height: 100vh;
+border-radius: 15px;
   margin-left: -15rem;
   transition: margin 0.25s ease-out;
-  background-color: #0a0a0a;
+
+  background-color: var(--content-bg-color);
+
+  box-shadow: rgba(0, 0, 0) 0px 4px 12px;
+  
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -53,12 +115,33 @@ padding: 0.875em 1.25em;
 font-size: 1.2em;
 }
 
+#sidebar-wrapper .border-bottom {
+  border-bottom: 1px solid #0a0a0a!important;
+}
+
+.border-top {
+  border-top: 1px solid #0a0a0a!important;
+}
+
 #sidebar-wrapper .list-group {
   width: 15rem;
 }
 
+
+ #sidebar-wrapper p {
+    
+ color: rgb(124, 124, 124);
+ position: fixed;
+  bottom: 0;
+
+    
+    
+  }
+
 #page-content-wrapper {
   min-width: 100vw;
+  margin-top: 30px;
+  padding-bottom: 30px;
 
 }
 
@@ -68,6 +151,12 @@ font-size: 1.2em;
 
 #menu-toggle {
   cursor: pointer;
+  color: #ffda63;
+}
+
+.toggle-icon {
+  color: #ffda63;
+  font-size: 18px;
 }
 
 .list-group-item {
@@ -81,16 +170,17 @@ font-size: 1.2em;
 
 .list-group-item.active {
   background-color: transparent;
-  color: #ffffff;
+  color: #ffda63;
   font-weight: bold;
   border: none;
 }
 
 .dropbtn {
-  background-color: #fdfdfd;
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  border: none;
+  background-color: #0a0a0a;
+  color: #fafafa;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
   cursor: pointer;
 }
 
@@ -124,7 +214,7 @@ font-size: 1.2em;
 
 @media (min-width: 768px) {
   #sidebar-wrapper {
-      margin-left: 0;
+      margin: 30px 0 30px 30px;
   }
 
   #page-content-wrapper {
@@ -143,9 +233,3 @@ font-size: 1.2em;
   }
   
  
-
-  #calendar {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
-  
