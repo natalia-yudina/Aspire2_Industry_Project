@@ -5,7 +5,8 @@
   --second-bg-color: #e7e7e7;
   --brand-text-color: #fafafa;
   --content-bg-color: #121212;
-  --ui-text-color: #FFC817;
+  --ui-text-color: #feca0f;
+  --logout-text-color: #ffda63;
 
 }
 
@@ -43,6 +44,16 @@ box-shadow: rgba(0, 0, 0) 0px 4px 12px;
   color: var(--ui-text-color);
 }
 
+.roster-bg {
+  background-color: rgb(28 30 44);
+  border-radius: 15px;
+box-shadow: rgba(0, 0, 0) 0px 4px 12px;
+}
+
+.logout-text {
+  color: #ffda63;
+}
+
 .rounded-full {
   border-radius: 100%;
 }
@@ -65,7 +76,7 @@ label {
 
 .btn {
   width: 10rem;
-  line-height: 2;
+  line-height: 1;
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 35px;
@@ -107,12 +118,14 @@ border-radius: 15px;
   background-color: var(--content-bg-color);
 
   box-shadow: rgba(0, 0, 0) 0px 4px 12px;
+ 
   
 }
 
 #sidebar-wrapper .sidebar-heading {
 padding: 0.875em 1.25em;
 font-size: 1.2em;
+
 }
 
 #sidebar-wrapper .border-bottom {
@@ -142,7 +155,7 @@ font-size: 1.2em;
   min-width: 100vw;
   margin-top: 30px;
   padding-bottom: 30px;
-
+  
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -152,6 +165,14 @@ font-size: 1.2em;
 #menu-toggle {
   cursor: pointer;
   color: #ffda63;
+}
+
+.admin-text {
+  display: flex;
+  margin-left: 10px;
+  color:  #fafafa;
+  font-size: 0.9rem;
+  padding: 0px;
 }
 
 .toggle-icon {
@@ -170,7 +191,7 @@ font-size: 1.2em;
 
 .list-group-item.active {
   background-color: transparent;
-  color: #ffda63;
+  color: #fafafa;
   font-weight: bold;
   border: none;
 }

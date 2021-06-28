@@ -1,12 +1,6 @@
 <?php
-// STD702 s00009622 Natalia Iudina 08.06.2021
+require_once 'config.php';
 ?>
-<?php
-  require_once 'config.php';
-?>
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +11,7 @@
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <?php $page = 'holidays'; include('includes/sidebar.php'); ?>
+        <?php $page = 'roster';  include('includes/sidebar.php'); ?>
         <!-- Sidebar END -->
         
         
@@ -27,13 +21,9 @@
             <!-- Top Navbar END -->
             <!-- Content -->
             <div class="container-fluid px-5 ">
-                <div class="row d-flex g-3 my-2 content-bg justify-content-center">
-                    <div class="col-md-6 pb-5">
-                    <?php include('holidayslist.php'); ?>
-                    
-                    <?php include('holidayform.php'); ?>
-     
-                   
+                <div class="row g-3 mt-0 roster-bg">
+                    <div class="col-md-12">
+                        <?php include('includes/calendar.php') ?>
                     </div>
                 </div>
             </div>
@@ -49,5 +39,4 @@
     crossorigin="anonymous"></script>
     
 </body>
-<script src="js/add_course.js"></script>
 </html>

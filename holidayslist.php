@@ -5,8 +5,8 @@
 <?php
 $records = getHolidayRecords();
 ?>
-    </hr>
-    <h5 class="mb-2">Active Holidays</h5>
+   
+    <h5 class="mb-2 pt-3 pb-3"><i class="fas fa-circle ui-text p-2"></i>Active Holidays</h5>
     <table class="table table-bordered">
       <tr>
         <th style="width: 10px">#</th>
