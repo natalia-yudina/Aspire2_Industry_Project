@@ -35,20 +35,20 @@
 <form>
 <!-- NI 02-06-2021 end -->
 <div class="form-group pt-3">
-      <label for="fname">Course Name</label>
+      <label for="fname"> Enter Course Name</label>
       <input type="text" class="form-control" id="cname" placeholder="Enter Course Name" name="cname">
     </div>
     <div class="form-group pt-3">
-      <label for="sdate">Start Date</label>
+      <label for="sdate">Select a Start Date</label>
       <input type="date" class="form-control" id="sdate"  name="sdate">
     </div>
     <div class="form-group pt-3">
-      <label for="edate">End Date</label>
+      <label for="edate">Select the End Date</label>
       <input type="date" class="form-control" id="edate" name="edate">
     </div>
 <!-- NI 02-06-2021 begin -->
     <!-- <button type="submit" class="btn btn-dark mt-4 "> Add Course </button> -->
-		<button type="button" class="btn add_new_course"> Add <i class="fas fa-plus "></i> </button>
+		<button type="button" class="btn add_new_course"> Add Course <i class="fas fa-plus "></i> </button>
 <!-- NI 02-06-2021 end -->
   </form>
                     </div>
