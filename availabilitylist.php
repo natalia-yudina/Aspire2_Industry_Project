@@ -1,19 +1,15 @@
-
 <?php
 // Kerem Uzun 08.06.2021
 ?>
 
 <?php
 $records = getAvailabilityRecords();
-//Kerem privet
 ?>
-<div class="box">
-  <div class="box-header with-border">
-    <h3 class="box-title pb-2">Availability List</h3>
-  </div>
+
+
   <!-- /.box-header -->
-  <div class="box-body">
-    <table class="table table-bordered">
+ 
+    <table class="table ">
       <tr>
         <th style="width: 10px">Select</th>
         <th>Day</th>
@@ -28,26 +24,25 @@ $records = getAvailabilityRecords();
 	  	extract($rec);
 	  ?>
       <tr>
-        <td><input type="checkbox"></td>
+        <td><input type="checkbox" class="w-100"></td>
         <td><?php echo $wday; ?></a></td>
         <td><?php echo $cname; ?></td>
         <td><?php echo $stime; ?></td>
         <td><?php echo $etime; ?></td>
-
-
+      
+     
       </tr>
       <?php } ?>
     </table>
-    <button type="button" class="btn btn-dark mt-4 mb-5 add_new_class"> Update Your Availability </button>
+    <button type="button" class="btn w-25"> Update Work Days <i class="fas fa-sync-alt p-2"></i> </button>
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
     <?php
     // echo generateHolidayPagination();
-    ?> </div>
-</div>
+    ?> 
+
 <!-- /.box -->
 <script language="javascript">
-
 
 </script>

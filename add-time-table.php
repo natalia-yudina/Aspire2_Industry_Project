@@ -26,7 +26,7 @@
             <!-- Content -->
             <div class="container-fluid px-5">
                 <div class="row d-flex justify-content-center g-3 my-2 content-bg">
-                    <div class="col-md-6 ">
+                    <div class="col-md-6 p-3">
 <!-- NI 03-06-2021 begin -->
 <!-- <form action="/action_page.php"> -->
 <form>
@@ -53,7 +53,7 @@
     </select>
   </div>
   <div class="form-group pt-3">
-    <label for="cname">Select the Course</label>
+    <label for="cname">Choose the Course</label>
     <select class="form-control" id="cname">
       <!-- NI 03-06-2021 begin -->
             <!-- <option>Blue Fleet</option>
@@ -74,7 +74,7 @@
     </select>
   </div>
   <div class="form-group pt-3">
-    <label for="day">Select the Course Day</label>
+    <label for="day">Choose a Day</label>
     <select class="form-select" id="day">
       <option>Monday</option>
       <option>Tuesday</option>
@@ -86,11 +86,11 @@
     </select>
   </div>
   <div class="form-group pt-3">
-      <label for="stime">Select the Start Time</label>
+      <label for="stime">Start</label>
       <input type="time" class="form-control" id="stime" name="stime">
     </div>
     <div class="form-group pt-3">
-      <label for="etime">Select the End Time</label>
+      <label for="etime">End</label>
       <input type="time" class="form-control" id="etime" name="etime">
     </div>
     <div class="form-group pt-3">
@@ -100,7 +100,7 @@
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
         
-        <button type="button" class="btn add_new_class"> Add Class <i class="fas fa-plus "></i></button>
+        <button type="button" class="btn"> Add Class<i class="fas fa-plus p-2 "></i></button>
         
     		
     <!-- NI 03-06-2021 end -->

@@ -1,7 +1,24 @@
+<!-- Sidebar Starts -->
+<div id="sidebar-wrapper">
+    <div class="sidebar-heading text-center py-4 brand-text fs-4 fw-bold text-uppercase border-bottom">
+        <span class="ui-text">MBSC</span> Roster
+        <span class="admin-text">Coach Panel v1</span>
+    </div>
 
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a>
-    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>Roster</a>
-    <a href="availability.php" ><i class="fa fa-clock-o" aria-hidden="true"></i>My Availability</a>
+    <div class="list-group list-group-flush my-3">
+        <a href="my-profile.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php if ($page == 'my-profile') {                                                                                                                 echo 'active';                                                                                                            } ?>">
+            <i class="fas fa-user me-2"></i>My Profile
+        </a>
+        <a href="user-roster.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php if ($page == 'user-roster') {                                                                                                          } ?>">
+            <i class="far fa-calendar-alt me-2"></i>Roster
+        </a>
+        <a href="update-work-days.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php if ($page == 'update-work-days') {                                                                                                                   } ?>">
+            <i class="fas fa-sync-alt me-2"></i>Update Work Days
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold logout-text pt-5">
+            <i class="fas fa-sign-out-alt  me-2"></i>Logout
+        </a>
+
+    </div>
 </div>
+<!-- Sidebar Ends-->

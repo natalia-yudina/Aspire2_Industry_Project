@@ -28,27 +28,27 @@
             <!-- Content -->
             <div class="container-fluid px-5 ">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
-                    <div class="col-md-6 pb-5">
+                    <div class="col-md-6 p-3">
                    
 <!-- NI 02-06-2021 begin -->
 <!-- <form action="/action_page.php"> -->
 <form>
 <!-- NI 02-06-2021 end -->
 <div class="form-group pt-3">
-      <label for="fname"> Enter Course Name</label>
+      <label for="fname">Course Name</label>
       <input type="text" class="form-control" id="cname" placeholder="Enter Course Name" name="cname">
     </div>
     <div class="form-group pt-3">
-      <label for="sdate">Select a Start Date</label>
+      <label for="sdate">Start Date</label>
       <input type="date" class="form-control" id="sdate"  name="sdate">
     </div>
     <div class="form-group pt-3">
-      <label for="edate">Select the End Date</label>
+      <label for="edate">End Date</label>
       <input type="date" class="form-control" id="edate" name="edate">
     </div>
 <!-- NI 02-06-2021 begin -->
     <!-- <button type="submit" class="btn btn-dark mt-4 "> Add Course </button> -->
-		<button type="button" class="btn add_new_course"> Add Course <i class="fas fa-plus "></i> </button>
+		<button type="button" class="btn p-2"> Add Course<i class="fas fa-plus p-2 "></i> </button>
 <!-- NI 02-06-2021 end -->
   </form>
                     </div>
