@@ -26,8 +26,8 @@
             <?php $page = 'add-course'; include('includes/nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
-            <div class="container-fluid px-5 ">
-                <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
+            <div class="container-fluid ">
+                <div class="row d-flex g-3 my-2 content-bg justify-content-center ">
                     <div class="col-md-6 p-3">
                    
 <!-- NI 02-06-2021 begin -->
@@ -45,6 +45,11 @@
     <div class="form-group pt-3">
       <label for="edate">End Date</label>
       <input type="date" class="form-control" id="edate" name="edate">
+    </div>
+
+    <div class="form-group pt-3">
+    <label for="colorpicker">Select Course Color</label>
+      <span class="d-flex "><input class="colorPicker" type='color' id='colorPicker' value="#FFC817"></span>
     </div>
 <!-- NI 02-06-2021 begin -->
     <!-- <button type="submit" class="btn btn-dark mt-4 "> Add Course </button> -->

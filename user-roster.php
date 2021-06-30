@@ -19,7 +19,7 @@
             <?php include('includes/user-nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
-            <div class="container-fluid px-5">
+            <div class="container-fluid">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center">
                     <div class="col-md-12 p-3">
                     <?php include('includes/calendar.php') ?>

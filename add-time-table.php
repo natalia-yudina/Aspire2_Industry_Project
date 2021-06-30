@@ -24,7 +24,7 @@
             <?php include('includes/nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
-            <div class="container-fluid px-5">
+            <div class="container-fluid">
                 <div class="row d-flex justify-content-center g-3 my-2 content-bg">
                     <div class="col-md-6 p-3">
 <!-- NI 03-06-2021 begin -->
@@ -93,10 +93,7 @@
       <label for="etime">End</label>
       <input type="time" class="form-control" id="etime" name="etime">
     </div>
-    <div class="form-group pt-3">
-    <label for="colorpicker">Select a Class Color</label>
-      <span class="d-flex "><input class="colorPicker" type='color' id='colorPicker' value="#FFC817"></span>
-    </div>
+    
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
         

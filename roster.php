@@ -20,7 +20,7 @@ require_once 'config.php';
             <?php include('includes/nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
-            <div class="container-fluid px-5 ">
+            <div class="container-fluid">
                 <div class="row g-3 mt-0 roster-bg">
                     <div class="col-md-12">
                         <?php include('includes/calendar.php') ?>

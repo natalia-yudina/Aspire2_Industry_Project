@@ -26,7 +26,7 @@
             <?php $page = 'user-list'; include('includes/nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
-            <div class="container-fluid px-5 ">
+            <div class="container-fluid ">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
                     <div class="container p-3">
                     <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Registered Coaches</h5>

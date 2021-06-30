@@ -7,6 +7,7 @@
   --content-bg-color: #121212;
   --ui-text-color: #feca0f;
   --logout-text-color: #ffda63;
+  --user-text-color: #dbdbdb;
 
 }
 
@@ -37,12 +38,16 @@ html, body {
 
 .content-bg {
 background-color: var(--content-bg-color);
-border-radius: 15px;
+border-radius: 10px;
 
 }
 
 .ui-text {
   color: var(--ui-text-color);
+}
+
+.user-text {
+  color: var(--user-text-color);
 }
 
 .roster-bg {
@@ -56,8 +61,17 @@ border-radius: 15px;
 }
 
 .user-bg {
-  height: 100%;
-  background-color: #ffff;
+  background-color: #fafafa;
+}
+
+.user-info {
+background-color: #0f0f0f;
+border-radius: 15px;
+}
+
+.container-fluid {
+  padding-left: 43px;
+  padding-right: 8px;
 }
 
 .rounded-full {
@@ -122,7 +136,8 @@ table a {
 }
 
 #sidebar-wrapper {
-border-radius: 15px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   margin-left: -15rem;
   transition: margin 0.25s ease-out;
   background-color: var(--content-bg-color); 
@@ -158,10 +173,8 @@ font-size: 1.2em;
   }
 
 #page-content-wrapper {
-  min-width: 100vw;
-  margin-top: 30px;
+  min-width: 100vw; 
   padding-bottom: 30px;
-  
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -247,12 +260,17 @@ font-size: 1.2em;
 
 @media (min-width: 768px) {
   #sidebar-wrapper {
-      margin: 30px 0 30px 30px;
+    margin: 0px 0px 0px 0px;
   }
 
   #page-content-wrapper {
       min-width: 0;
       width: 100%; 
+  }
+
+  .container-fluid {
+    padding-left: 43px;
+    padding-right: 8px;
   }
 
   #wrapper.toggled #sidebar-wrapper {
@@ -265,4 +283,10 @@ font-size: 1.2em;
     padding: 16px;
   }
   
+  @media (max-width: 768px) {
+    .container-fluid {
+      padding-left: 43px;
+      padding-right: 60px;
+    }
+  }
  
