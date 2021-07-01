@@ -8,6 +8,7 @@
   --ui-text-color: #feca0f;
   --logout-text-color: #ffda63;
   --user-text-color: #dbdbdb;
+  --login-bg-color: #feca0f;
 
 }
 
@@ -16,7 +17,12 @@ html, body {
  background-color: #0a0a0a; 
  height: 100%;
 }
+
 .primary-text {
+  color: var(--main-text-color);
+}
+
+.main-text {
   color: var(--main-text-color);
 }
 
@@ -49,6 +55,12 @@ border-radius: 10px;
 .user-text {
   color: var(--user-text-color);
 }
+
+.login-bg {
+  background-color: var(--login-bg-color);
+
+}
+
 
 .roster-bg {
   background-color: rgb(28 30 44);
@@ -273,6 +285,8 @@ font-size: 1.2em;
     padding-right: 8px;
   }
 
+  
+
   #wrapper.toggled #sidebar-wrapper {
       margin-left: -16rem;
   }
@@ -290,3 +304,11 @@ font-size: 1.2em;
     }
   }
  
+
+.login-box {
+  border-radius: 20px;
+}
+
+.login-nav {
+  text-decoration: none;
+}

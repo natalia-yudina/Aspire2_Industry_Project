@@ -19,7 +19,7 @@ $message='';
 			if($row['id_role'] == "1"){
                 $_SESSION['email'] = $rows['email'];
                 $_SESSION['password'] = $rows['password'];
-                header('location: availability.php');	
+                header('location: update-work-days.php');	
               }
               else{
                 $_SESSION['email'] = $rows['email'];

@@ -4,58 +4,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="mystyle.css">
+    <?php include('includes/head.php'); ?>
 </head>
-<body>
+<body class="bg-light text-body">
 
-<nav class="navbar navigation">
-  <div class="container-fluid">
-    <div class="navbar-header ">
-      <a class="navbar-brand" href="#">LOGO</a>
-    </div>
+<?php include('includes/login-nav.php'); ?>
   
-    <ul class="nav navbar-nav navbar-right text-dark">
-      <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-  
-<div class="container-fluid">
-<div class="col-md-6">
-<h1>Login</h1>
+<div class="container-fluid bg-light px-5 pb-5">
+  <div class="row">
 
-<form action="logcode.php" method="post">
+  <div class="col-md-6 second-text content-bg text-light login-box">
+    <h1 class="text-center text-black py-4">Sign In</h1>
+  <div class="d-flex justify-content-center ">
+
+<form class="w-75" action="logcode.php" method="post">
     <div class="form-group">
       <label for="email">Enter your email</label>
-      <input type="email" class="form-control" placeholder="Email address" name="email" required>
+      <input type="email" class="form-control mb-3" placeholder="Email address" name="email" required>
     </div>
     <div class="form-group">
       <label for="pwd">Enter your password</label>
-      <input type="password" class="form-control" placeholder="Password" name="password" required>
+      <input type="password" class="form-control mb-3" placeholder="Password" name="password" required>
     </div>
     <p>
     <?php echo $message;?>
     </p>
-    <input type="submit" name="login" value="Login Here"></td>
+    <input type="submit" class="btn btn-dark py-3" name="login" value="Login Here"></td>
     
   </form>
 
+  </div>
 </div>
 
-<div class="col-md-6 bg2">
-<p>-Est. 1958-</p>
+
+
+<div class="col-md-6  main-text text-center py-4 ">
+
+<span class="d-flex justify-content-center fw-bold">-Est. 1958-</span>
 <h1>MURRAYS BAY<br>SAILING CLUB</h1>
-<h2> Roster System <br> v1</h2>
+<h2> Roster System  v1</h2>
+
+<img src="images/sign-up-bg.png" class="" width="400" height="250">
 </div>
  
+</div>
 </div>
 
 </body>
