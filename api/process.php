@@ -112,7 +112,7 @@ function calendarView() {
 
               $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
 
-              $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster);
+              $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
               $date_calculate_roster_copy = $date_calculate_roster_new->toImmutable();
 
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
