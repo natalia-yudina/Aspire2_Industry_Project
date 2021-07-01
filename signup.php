@@ -13,12 +13,6 @@
 </head>
 <body>
 
-<?php
-
-	include 'db.php';
-  
-?>
-
 <nav class="navbar navigation">
   <div class="container-fluid">
     <div class="navbar-header ">
@@ -26,8 +20,8 @@
     </div>
   
     <ul class="nav navbar-nav navbar-right text-dark">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
@@ -46,7 +40,7 @@
     </div>
     <div class="form-group">
       <label for="email">Enter your email (required)</label>
-      <input type="email" class="form-control" id="email" onBlur="checkAvailability()" placeholder="Email address" name="email" required>
+      <input type="email" class="form-control" id="email" placeholder="Email address" name="email" required>
       <span id="user-availability-status" style="font-size:12px;"></span>
     </div>
     <div class="form-group">
@@ -66,7 +60,7 @@
 
   <?php
 						if(isset($_POST['singup'])){
-							include 'db.php';
+							include 'config.php';
 							$fname = $_POST['fname'];
 							$lname = $_POST['lname'];
 							$email = $_POST['email'];
@@ -74,9 +68,9 @@
 							$address = $_POST['address'];              
 							$pwd = $_POST['pwd'];
 							
-							$qry = "INSERT INTO user_table (firstName,lastName, userEmail, phoneNumber, userAddress, userPassword)
-							VALUES('$fname','$lname','$email','$phone','$address','$pwd')";
-							$result = $conn->query($qry);
+							$qry = "INSERT INTO users (first_name,last_name, email, phone_number, address, password, id_role)
+							VALUES('$fname','$lname','$email','$phone','$address','$pwd', '1')";
+							$result = $dbConn->query($qry);
 							if($result == TRUE){
 								echo "<script type = \"text/javascript\">
 											alert(\"Successfully Registered.\");

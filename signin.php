@@ -1,3 +1,6 @@
+<?php
+  include "logcode.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +22,8 @@
     </div>
   
     <ul class="nav navbar-nav navbar-right text-dark">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
@@ -28,17 +31,23 @@
 <div class="container-fluid">
 <div class="col-md-6">
 <h1>Login</h1>
-<form action="/action_page.php">
+
+<form action="logcode.php" method="post">
     <div class="form-group">
       <label for="email">Enter your email</label>
-      <input type="email" class="form-control" id="email" placeholder="Email address" name="email">
+      <input type="email" class="form-control" placeholder="Email address" name="email" required>
     </div>
     <div class="form-group">
       <label for="pwd">Enter your password</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd">
+      <input type="password" class="form-control" placeholder="Password" name="password" required>
     </div>
-    <button type="submit" class="btn btn-default">Login</button>
+    <p>
+    <?php echo $message;?>
+    </p>
+    <input type="submit" name="login" value="Login Here"></td>
+    
   </form>
+
 </div>
 
 <div class="col-md-6 bg2">
