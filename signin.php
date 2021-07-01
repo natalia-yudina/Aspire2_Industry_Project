@@ -13,18 +13,18 @@
 <div class="container-fluid bg-light px-5 pb-5">
   <div class="row">
 
-  <div class="col-md-6 second-text content-bg text-light login-box">
-    <h1 class="text-center text-black py-4">Sign In</h1>
+  <div class="col-md-6 login-bg text-dark login-box">
+    <h1 class="text-center text-dark py-4">Sign In</h1>
   <div class="d-flex justify-content-center ">
 
-<form class="w-75" action="logcode.php" method="post">
+<form class="w-75 text-dark" action="logcode.php" method="post">
     <div class="form-group">
       <label for="email">Enter your email</label>
       <input type="email" class="form-control mb-3" placeholder="Email address" name="email" required>
     </div>
     <div class="form-group">
       <label for="pwd">Enter your password</label>
-      <input type="password" class="form-control mb-3" placeholder="Password" name="password" required>
+      <input type="password" class="form-control mb-2" placeholder="Password" name="password" required>
     </div>
     <p>
     <?php echo $message;?>
