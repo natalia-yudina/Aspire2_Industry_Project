@@ -23,9 +23,12 @@ require_once 'config.php';
             <div class="container-fluid">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center">
                     <div class="col-md-12 px-5 py-3">
+                        <!-- NI 01-07-2021 begin -->
                         <?php
-                        include('availabilitylist.php');
+                        // include('availabilitylist.php');
                         ?>
+                          <div id="availability_data"></div>
+                        <!-- NI 01-07-2021 end -->
                     </div>
                 </div>
             </div>
@@ -38,5 +41,8 @@ require_once 'config.php';
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <!-- NI 25-06-2021 begin -->
+    <script src="js/availability.js"></script>
+    <!-- NI 25-06-2021 end -->
 </body>
 </html>

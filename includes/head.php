@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- <script type="text/javascript" src="calendar/function.js"></script> -->
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,10 +14,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Local CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- убрала пока -->
+    <!-- NI 10-06-2021 begin -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css"> -->
+    <!-- NI 10-06-2021 end-->
 
-    
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"> </script>
 
@@ -27,7 +27,7 @@
     <!-- SweetAlert CDN     NI 08-06-2021-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
+    <!-- FullCalendar     NI 10-06-2021 -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.css" /> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
@@ -36,3 +36,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <!-- DataTables library (put only after JQuery)   NI 01-07-2021-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+    <!-- DataTables Select library (put only after JQuery)   NI 01-07-2021-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
