@@ -19,8 +19,8 @@ $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.star
       <tr>
 
         <!-- <th></th> -->
-        <th>#</th>
         <th style="width: 10px">Select</th>
+        <th>#</th>
         <th>Day</th>
         <th>Course Name</th>
         <th>Start Time</th>
