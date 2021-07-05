@@ -28,7 +28,7 @@
     <a href="user-list.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php if($page=='Registered Coaches') {echo 'active';} ?>">
     <i class="fas fa-users me-2"></i>Coaches List
     </a>
-    <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold logout-text pt-5">
+    <a href="logout.php" class="list-group-item list-group-item-action bg-transparent fw-bold logout-text pt-5">
     <i class="fas fa-sign-out-alt  me-2"></i>Logout
     </a>
  
