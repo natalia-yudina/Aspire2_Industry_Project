@@ -5,7 +5,7 @@
 
   require_once '../config.php';
 
-$mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.start_time, class.end_time, availability.id_user FROM class
+$mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.start_time, class.end_time, availability.id_user, availability.close_date FROM class
   			   INNER JOIN course ON class.id_course=course.id_course
                  left join availability ON
                  class.id_class=availability.id_class";
@@ -40,7 +40,7 @@ $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.star
 			      // echo "<td></td>";
 
             // echo "<td><input type='checkbox' name='check[".$row['id_class']."]' value='1'></td>";
-            if ($row['id_user'] > 0){
+            if ($row['id_user'] > 0 and is_null($row['close_date'])){
             echo "<td><input checked type='checkbox' class='w-100 checkitem' name='check[".$row['id_class']."]' value=".$row['id_class']."></td>";
             } else {
             echo "<td><input type='checkbox' class='w-100 checkitem' name='check[".$row['id_class']."]' value=".$row['id_class']."></td>";
