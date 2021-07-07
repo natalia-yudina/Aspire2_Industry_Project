@@ -12,7 +12,7 @@ $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.star
 
 ?>
 
-<form>
+<form style="overflow-x:auto;" class="pb-3">
   <!-- <table class="table table-bordered display" id="availability"> -->
   <table class="table display" id="availability">
   <thead>
@@ -55,7 +55,11 @@ $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.star
 ?>
  </tbody>
  </table>
- <!-- <button type="button" class="btn btn-dark mt-4 mb-5 update_availability" id="btid">Update Your Availability </button> -->
- <button type="button" class="btn w-25 update_availability" id="btid"> Update Work Days <i class="fas fa-sync-alt p-2"></i> </button>
- <div class="box-footer clearfix">
 </form>
+
+<div class="col-md-3 mx-auto">
+<!-- <button type="button" class="btn btn-dark mt-4 mb-5 update_availability" id="btid">Update Your Availability </button> -->
+<button type="button" class="btn w-100 update_availability" id="btid"> Update Work Days <i class="fas fa-sync-alt p-2"></i> </button>
+ <div class="box-footer clearfix">
+ </div>
+ </div>
