@@ -32,16 +32,17 @@ require_once 'config.php';
 }
 
 .dataTables_wrapper .dataTables_length select {
-    border: 1px solid #bcbcbc;
+    border: 1px solid #ffda63;
     border-radius: 3px;
     padding: 5px;
     background-color: transparent;
     padding: 4px;
-    color: #cdcdcd;
+    color: #737373;
+    font-weight: 600;
 }
 
 .dataTables_wrapper .dataTables_filter input {
-    border: 1px solid #aaa;
+    border: 1px solid #ffda63;
     border-radius: 3px;
     padding: 5px;
     background-color: transparent;

@@ -6,6 +6,15 @@ require_once 'config.php';
 
 <head>
     <?php include('includes/head.php'); ?>
+    <style>
+        .fc-icon {
+  display: inline-block;
+  height: 1em;
+  line-height: 1em;
+  font-size: 1.1em;
+  color: #ffda63; 
+}
+        </style>
 </head>
 
 <body>

@@ -7,7 +7,7 @@
   --content-bg-color: #121212;
   --ui-text-color: #feca0f;
   --logout-text-color: #ffda63;
-  --user-text-color: #dbdbdb;
+  --user-text-color: #fafafa;
   --login-bg-color: #fff2c5;
 
 }
@@ -16,6 +16,11 @@ html, body {
   color: #fafafa;
  background-color: #0a0a0a;
  height: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #fafafa;
 }
 
 .primary-text {
