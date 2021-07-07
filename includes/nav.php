@@ -17,7 +17,7 @@
                             </button>
                             <div class="user-dropdown-content">
                             <a href="#">Profile Settings</a>
-                            <a href="#">Logout</a>
+                            <a href="logout.php">Logout</a>
                             </div>
                           </div>
                     </ul>

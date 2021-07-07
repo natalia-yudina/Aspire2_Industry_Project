@@ -41,7 +41,7 @@
 			<?php
 			// NI 08-06-2021 begin
 			// $query = $mysqli->query("SELECT id_user, last_name FROM users");
-			$sql="SELECT id_user, last_name FROM users";
+			$sql="SELECT id_user, last_name FROM users where id_role = '2'";
 			$query = dbQuery($sql);
 			// NI 08-06-2021 end
 			while($row = mysqli_fetch_assoc($query)) {
