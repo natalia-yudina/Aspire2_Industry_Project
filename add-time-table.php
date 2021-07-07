@@ -97,7 +97,7 @@
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
         
-        <button type="button" class="btn"> Add Class<i class="fas fa-plus p-2 "></i></button>
+        <button type="button" class="btn add_new_class"> Add Class<i class="fas fa-plus p-2 "></i></button>
         
     		
     <!-- NI 03-06-2021 end -->

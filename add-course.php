@@ -53,7 +53,7 @@
     </div>
 <!-- NI 02-06-2021 begin -->
     <!-- <button type="submit" class="btn btn-dark mt-4 "> Add Course </button> -->
-		<button type="button" class="btn p-2"> Add Course<i class="fas fa-plus p-2 "></i> </button>
+		<button type="button add_new_course" class="btn p-2"> Add Course<i class="fas fa-plus p-2 "></i> </button>
 <!-- NI 02-06-2021 end -->
   </form>
                     </div>
