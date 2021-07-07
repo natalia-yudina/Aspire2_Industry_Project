@@ -7,6 +7,71 @@ require_once 'config.php';
 
 <head>
     <?php include('includes/head.php'); ?>
+    <style>
+        .dataTables_wrapper .dataTables_length,
+        .dataTables_wrapper .dataTables_filter,
+        .dataTables_wrapper .dataTables_info,
+        .dataTables_wrapper .dataTables_processing {
+            color: #a99595;
+        }
+
+        .dataTables_wrapper 
+        .dataTables_paginate 
+        .paginate_button.disabled,
+         .dataTables_wrapper 
+         .dataTables_paginate 
+         .paginate_button.disabled:hover, 
+         .dataTables_wrapper 
+         .dataTables_paginate 
+         .paginate_button.disabled:active {
+    cursor: default;
+    color: #ffda63 !important;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #121212;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ffda63;
+    border-radius: 3px;
+    padding: 5px;
+    background-color:#ffda63;
+    padding: 4px;
+    color: #121212;
+    font-weight: 600;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ffda63;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    margin-left: 3px;
+    color: #cdcdcd;
+}
+
+.dataTables_wrapper 
+.dataTables_paginate 
+.paginate_button.current, 
+.dataTables_wrapper 
+.dataTables_paginate 
+.paginate_button.current:hover {
+    border-radius: 6px;
+}
+
+.table>thead {
+    vertical-align: bottom;
+    background-color: #1b1b1b;
+}
+
+    </style>
 </head>
 
 <body>

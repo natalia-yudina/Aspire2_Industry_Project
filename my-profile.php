@@ -26,8 +26,8 @@ require_once 'config.php';
                         <div class="d-flex justify-content-center user-info py-4">
                             <div class="d-flex flex-column user-text">
                                 <div class="text-center fw-bold  ">
-                                    <i class="fas fa-user-circle ui-text fs-2"></i>
-                                    <p>Jhon Doe</p>
+                                    <i class="fas fa-user-circle user-text fs-2"></i>
+                                    <p style="color:#ffd75e;">Jhon Doe</p>
                                 </div>
                                 <div><i class="fas fa-mobile-alt second-text fs-6 p-2"></i> 022 558 22 36</div>
                                 <div><i class="fas fa-envelope second-text fs-6 p-2"></i>jhon@gmail.com</div>
@@ -40,7 +40,7 @@ require_once 'config.php';
                         <div class="d-flex justify-content-center user-info py-4">
                             <div class="d-flex flex-column">
                                 <div class="text-center fw-bold">
-                                    <i class="fas fa-edit ui-text fs-3"></i>
+                                    <i class="fas fa-edit user-text fs-3"></i>
                                     <p>Edit Profile</p>
                                 </div>
                                 <!-- Form Start-->

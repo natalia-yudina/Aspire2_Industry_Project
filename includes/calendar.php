@@ -37,14 +37,14 @@
 
 .fc-state-default {
 	background-image: none;
-	background-color: #fafafa;
+	background-color: #ffda63;
 	font-weight: 400;
 	box-shadow: none;
 	text-shadow: none;
 }
 
 .fc-state-active {
-	background-color: #ffda63;
+	background-color: #fafafa;
 	font-weight: 400;
 	text-shadow: none;
 }
@@ -58,6 +58,14 @@ color: #637373;
 
 .fc-day-number {
 	color:#fafafa;
+}
+
+.fc button .fc-icon {
+	color: #121212;
+}
+
+.fc-state-disabled {
+    opacity: 0.2;
 }
 </style>
 
