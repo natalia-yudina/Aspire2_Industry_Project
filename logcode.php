@@ -19,11 +19,13 @@ $message='';
 			if($row['id_role'] == "1"){
                 $_SESSION['email'] = $rows['email'];
                 $_SESSION['password'] = $rows['password'];
+				$_SESSION['role'] = $rows['id_role'];
                 header('location: update-work-days.php');	
               }
               else{
                 $_SESSION['email'] = $rows['email'];
                 $_SESSION['password'] = $rows['password'];
+				$_SESSION['role'] = $rows['id_role'];
                 header('location: time-table.php');	
               }
             }
