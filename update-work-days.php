@@ -33,8 +33,9 @@ require_once 'config.php';
 }
 
 table.dataTable.no-footer {
-    border-bottom: 1px solid #bcbcbc;
+    border-bottom: 1px solid #121212;
     padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .dataTables_wrapper .dataTables_length select {
