@@ -29,15 +29,21 @@ require_once 'config.php';
     border: 1px solid transparent;
     background: transparent;
     box-shadow: none;
+    font-weight: 600;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #bcbcbc;
+    padding-top: 25px;
 }
 
 .dataTables_wrapper .dataTables_length select {
     border: 1px solid #ffda63;
     border-radius: 3px;
     padding: 5px;
-    background-color: transparent;
+    background-color:#ffda63;
     padding: 4px;
-    color: #737373;
+    color: #121212;
     font-weight: 600;
 }
 
