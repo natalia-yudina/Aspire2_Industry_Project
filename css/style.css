@@ -143,6 +143,11 @@ table a {
   font-weight: 600;
 }
 
+
+.table-bordered {
+  border-color: #303235;
+}
+
 .fa, .fas {
   font-weight: 600;
   font-size: 15px;

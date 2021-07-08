@@ -95,4 +95,19 @@ function getAvailabilityRecords() {
 }
 
 // KU 09/06/2021 end
+
+function getCoachesList() {
+
+	$sql 	= "SELECT id_user,id_role,first_name, last_name, phone_number FROM users";
+	//echo $sql;
+	$result = dbQuery($sql);
+	$records = array();
+	while($row = dbFetchAssoc($result)) {
+		extract($row);
+		$records[] = array("uid" => $id_user,"role" => $id_role,"fname" => $first_name, "lname" => $last_name,"pnumber" => $phone_number);
+	}//while
+	return $records;
+
+}
+
 ?>

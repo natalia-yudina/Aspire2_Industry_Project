@@ -25,6 +25,10 @@ switch($cmd) {
 		deleteHoliday();
 	break;
 
+  case 'udelete':
+		deleteUser();
+	break;
+
   case 'cdelete':
 		deleteClass();
 	break;
@@ -48,6 +52,14 @@ function addHoliday() {
   exit();
 }
 
+function deleteUser() {
+	$idUser	= $_GET['uid'];
+
+	$sql	= "DELETE FROM users WHERE id_user = $idUser";
+	dbQuery($sql);
+  header('Location: ../user-list.php');
+  exit();
+}
 
 function deleteHoliday() {
 	$holyId	= $_GET['hId'];
