@@ -62,8 +62,11 @@ $(function () {
     // defaultView: 'basicWeek',
     defaultView: 'agendaWeek',
     allDaySlot: false,
-    slotMinHeight: 500,
-    eventMinHeight: 500,
+    minTime: "08:00:00",
+    maxTime: "20:00:00",
+    height: 'auto',       
+    // slotMinHeight: 500,
+    // eventMinHeight: 500,
     // eventShortHeight: 500,
     // agendaEventMinHeight: 1000,
 
