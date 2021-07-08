@@ -31,6 +31,7 @@
             <div class="container-fluid">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center">
                     <div class="col-md-12 p-3">
+                      <button type="button" class="btn generate_roster"> Generate roster </button>                      
                     <?php include('includes/calendar_roster.php') ?>
                     </div>
                 </div>

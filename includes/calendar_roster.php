@@ -1,4 +1,4 @@
-<button type="button" class="btn generate_roster"> Generate roster </button>
+
 
 <div id="calendar"></div>
 <div class="box box-primary">
