@@ -25,6 +25,10 @@ switch($cmd) {
 		deleteHoliday();
 	break;
 
+  case 'cdelete':
+		deleteClass();
+	break;
+
  // NI 10-06-2021 begin
   case 'calview':
 		calendarView();
@@ -51,6 +55,15 @@ function deleteHoliday() {
 	$sql	= "DELETE FROM holidays WHERE id = $holyId";
 	dbQuery($sql);
   header('Location: ../holidays.php');
+  exit();
+}
+
+function deleteClass() {
+	$classId	= $_GET['cId'];
+
+	$sql	= "DELETE FROM class WHERE id_class = $classId";
+	dbQuery($sql);
+  header('Location: ../add-time-table.php');
   exit();
 }
 

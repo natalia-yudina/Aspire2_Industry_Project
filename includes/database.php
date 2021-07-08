@@ -54,6 +54,28 @@ function getHolidayRecords() {
 	return $records;
 }
 
+function getClassesRecords() {
+	$per_page = 10;
+	$page 	= (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
+	$start 	= ($page-1)*$per_page;
+	$sql 	= "SELECT class.id_class, course.course_name, class.start_time, class.end_time, class.weekday, users.last_name
+	FROM class
+	INNER JOIN course
+	ON class.id_course=course.id_course
+	INNER JOIN users
+	ON class.id_user=users.id_user
+	ORDER BY id_class DESC LIMIT $start, $per_page";
+	//echo $sql;
+	$result = dbQuery($sql);
+	$records = array();
+	while($row = dbFetchAssoc($result)) {
+		extract($row);
+		$records[] = array("cid" => $id_class, "ccoach" => $last_name, "courid" => $course_name,
+		"cday" => $weekday, "cstart" => $start_time, "cend" => $end_time);
+	}//while
+	return $records;
+}
+
 // NI 08-06-2021 end
 
 // KU 09/06/2021 begin

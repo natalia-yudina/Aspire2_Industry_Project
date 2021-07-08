@@ -102,6 +102,12 @@
     		
     <!-- NI 03-06-2021 end -->
   </form>
+
+  <div class="col-md-6 p-3">
+        
+        <?php include('classeslist.php'); ?>
+                   
+  </div>
                     </div>
                 </div>
             </div>
