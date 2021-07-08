@@ -30,7 +30,7 @@
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
                     <div class="container p-3">
                     <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Registered Coaches</h5>
-    <table class="table ">
+    <table class="table user-text ">
         <thead>
       <tr>
         <th scope="col">#</th>
@@ -40,7 +40,7 @@
         <th scope="col">Phone Number</th>
         <th scope="col">Action</th>
       </tr>
-      <thead>
+      </thead>
 
       <tbody>
       <tr>
@@ -51,7 +51,7 @@
         <td>0553645684</td>
         <td>Delete<i class="fas fa-trash p-2"></i></td>
       </tr>
-      <tbody>
+      </tbody>
     </table>
   
 

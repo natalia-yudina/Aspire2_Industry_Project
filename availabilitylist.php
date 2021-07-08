@@ -34,7 +34,7 @@ $records = getAvailabilityRecords();
       </tr>
       <?php } ?>
     </table>
-    <button type="button" class="btn w-25"> Update Work Days <i class="fas fa-sync-alt p-2"></i> </button>
+    <button type="button" class="btn w-25"> Update Days <i class="fas fa-sync-alt p-2"></i> </button>
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">

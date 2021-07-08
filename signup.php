@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     <?php include('includes/head.php'); ?>
+    <style>
+ label {
+   color: #1F1F1F;
+   font-weight: 600;
+ }
+    </style>
 </head>
 <body class="bg-light text-body">
 

@@ -7,6 +7,7 @@
                     <h2 class="fs-3 m-0"><?php if($page=='add-time-table') {echo 'Add Class';} ?></h2>
                     <h2 class="fs-3 m-0"><?php if($page=='holidays') {echo 'Holidays';} ?></h2>
                     <h2 class="fs-3 m-0"><?php if($page=='time-table') {echo 'Time Table';} ?></h2>
+                    <h2 class="fs-3 m-0"><?php if($page=='user-list') {echo 'Coaches List';} ?></h2>
                     
                 </div>
                 

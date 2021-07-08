@@ -8,7 +8,7 @@
                                     echo 'Roster';
                                 } ?></h2>
         <h2 class="fs-3 m-0"><?php if ($page == 'update-work-days') {
-                                    echo 'Update Work Days';
+                                    echo 'My Available Days';
                                 } ?></h2>
 
     </div>

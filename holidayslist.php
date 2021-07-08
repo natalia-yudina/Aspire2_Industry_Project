@@ -7,7 +7,7 @@ $records = getHolidayRecords();
 ?>
    
     <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Active Holidays</h5>
-    <table class="table table-bordered">
+    <table class="table user-text table-bordered">
       <tr>
         <th style="width: 10px">#</th>
         <th>Date</th>

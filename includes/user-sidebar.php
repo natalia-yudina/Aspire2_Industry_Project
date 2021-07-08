@@ -13,7 +13,7 @@
             <i class="far fa-calendar-alt me-2"></i>Roster
         </a>
         <a href="update-work-days.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold <?php if ($page == 'update-work-days' ) {echo 'active';} ?>                                                                                                                  } ?>">
-            <i class="fas fa-sync-alt me-2"></i>Update Work Days
+            <i class="fas fa-sync-alt me-2"></i>My Availabile Days
         </a>
         <a href="logout.php" class="list-group-item list-group-item-action bg-transparent fw-bold logout-text pt-5">
             <i class="fas fa-sign-out-alt  me-2"></i>Logout
