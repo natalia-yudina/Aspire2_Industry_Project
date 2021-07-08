@@ -64,7 +64,8 @@ $(function () {
     allDaySlot: false,
     minTime: "08:00:00",
     maxTime: "20:00:00",
-    height: 'auto',       
+    height: 'auto',
+
     // slotMinHeight: 500,
     // eventMinHeight: 500,
     // eventShortHeight: 500,
@@ -83,8 +84,11 @@ $(function () {
 		// 	 $(cell).css('opacity', 1);
 		// },
 		 // viewRender: function(view, element) {},
-		// eventRender: function(ev, element, view) {
-		// },
+		eventRender: function(ev, element, view) {
+      element.css("font-size", "1.2em");
+      element.css("padding", "5px");
+      element.css("height", "200px");
+		},
 
 		eventAfterRender : function(ev, element, view) {
 			if(ev.block == true) {
