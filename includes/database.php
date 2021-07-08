@@ -54,6 +54,21 @@ function getHolidayRecords() {
 	return $records;
 }
 
+function getCoursesRecords() {
+	$per_page = 10;
+	$page 	= (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
+	$start 	= ($page-1)*$per_page;
+	$sql 	= "SELECT * FROM course ORDER BY id_course DESC LIMIT $start, $per_page";
+	//echo $sql;
+	$result = dbQuery($sql);
+	$records = array();
+	while($row = dbFetchAssoc($result)) {
+		extract($row);
+		$records[] = array("corid" => $id_course, "corname" => $course_name, "corstart" => $start_date, "corend" => $end_date);
+	}//while
+	return $records;
+}
+
 function getClassesRecords() {
 	$per_page = 10;
 	$page 	= (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;

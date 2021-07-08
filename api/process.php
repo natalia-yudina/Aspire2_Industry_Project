@@ -29,6 +29,10 @@ switch($cmd) {
 		deleteUser();
 	break;
 
+	case 'cordelete':
+		deleteCourse();
+	break;
+
   case 'cdelete':
 		deleteClass();
 	break;
@@ -67,6 +71,15 @@ function deleteHoliday() {
 	$sql	= "DELETE FROM holidays WHERE id = $holyId";
 	dbQuery($sql);
   header('Location: ../holidays.php');
+  exit();
+}
+
+function deleteCourse() {
+	$corId	= $_GET['corId'];
+
+	$sql	= "DELETE FROM course WHERE id_course = $corId";
+	dbQuery($sql);
+  header('Location: ../add-course.php');
   exit();
 }
 
