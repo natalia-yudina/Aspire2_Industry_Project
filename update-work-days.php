@@ -42,8 +42,9 @@ table.dataTable.no-footer {
     border: 1px solid #ffda63;
     border-radius: 3px;
     padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     background-color:#ffda63;
-    padding: 4px;
     color: #121212;
     font-weight: 600;
 }
@@ -53,7 +54,7 @@ table.dataTable.no-footer {
     border-radius: 3px;
     padding: 5px;
     background-color: transparent;
-    margin-left: 3px;
+    margin-left: 10px;
     color: #cdcdcd;
 }
 
