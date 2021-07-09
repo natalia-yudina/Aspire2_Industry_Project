@@ -19,13 +19,13 @@
 </head>
 
 <body>
-    <div class="d-flex user-bg" id="wrapper">
+    <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <?php $page = 'user-roster'; include('includes/sidebar.php'); ?>
+        <?php $page = 'roster'; include('includes/sidebar.php'); ?>
         <!-- Sidebar END -->
         <div id="page-content-wrapper">
             <!-- Top Navbar -->
-            <?php include('includes/nav.php'); ?>
+            <?php $page = 'roster'; include('includes/nav.php'); ?>
             <!-- Top Navbar END -->
             <!-- Content -->
             <div class="container-fluid">
