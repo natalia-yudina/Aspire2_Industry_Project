@@ -10,6 +10,28 @@
    color: #1F1F1F;
    font-weight: 600;
  }
+ .btn {
+  width: auto;
+  height: 50px;
+  line-height: 1;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #212529;
+  border-radius: 6px;
+  background:none;
+ 
+  
+}
+
+.btn:hover {
+  color: #fafafa;
+  background-color: #212529 ;
+  border: 1px solid  #212529;
+  transition: 0.5ms;
+}
+
     </style>
 </head>
 <body class="bg-light text-body">
@@ -35,7 +57,7 @@
     <p>
     <?php echo $message;?>
     </p>
-    <input type="submit" class="btn btn-dark py-3" name="login" value="Login Here"></td>
+    <input type="submit" class="btn " name="login" value="Sign In"></td>
     
   </form>
 

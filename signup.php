@@ -7,6 +7,28 @@
    color: #1F1F1F;
    font-weight: 600;
  }
+
+ .btn {
+  width: auto;
+  height: 50px;
+  line-height: 1;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #212529;
+  border-radius: 6px;
+  background:none;
+ 
+  
+}
+
+.btn:hover {
+  color: #fafafa;
+  background-color: #212529 ;
+  border: 1px solid  #212529;
+  transition: 0.5ms;
+}
     </style>
 </head>
 <body class="bg-light text-body">
@@ -17,7 +39,7 @@
   <div class="row">
 
   <div class="col-md-6 second-text login-bg text-dark login-box">
-    <h1 class="text-center text-black py-4">Signup</h1>
+    <h1 class="text-center text-black py-4">Sign Up</h1>
   <div class="d-flex justify-content-center ">
 <form class="w-75 fw-bold" method="post" name="singup" onsubmit="return validateFormDataOne()">
 <div class="form-group ">
@@ -45,7 +67,7 @@
       <label for="pwd">Enter your password</label>  
       <input type="password" class="form-control mb-3" id="pwd" placeholder="Password" name="pwd" required>
     </div>
-    <button type="submit" name="singup" class="btn btn-dark py-3">Signup</button>
+    <button type="submit" name="singup" class="btn">Sign Up</button>
   </form>
   
   <?php
