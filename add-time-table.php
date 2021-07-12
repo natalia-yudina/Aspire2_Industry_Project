@@ -98,7 +98,7 @@
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
         
-        <button type="button" class="btn add_new_class my-4 py-3"> Add Class<i class="fas fa-plus px-2"></i></button>
+        <button type="button" class="btn add_new_class my-4 py-3" onClick="window.location.reload();"> Add Class<i class="fas fa-plus px-2"></i></button>
         
     		
     <!-- NI 03-06-2021 end -->
