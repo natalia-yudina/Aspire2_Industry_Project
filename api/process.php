@@ -28,7 +28,11 @@ switch($cmd) {
   case 'udelete':
 		deleteUser();
 	break;
-
+  // NI 12-07-2021 begin
+   case 'course':
+ 		addCourse();
+ 	break;
+  // NI 12-07-2021 end
 	case 'cordelete':
 		deleteCourse();
 	break;
@@ -46,6 +50,8 @@ switch($cmd) {
 	break;
 }
 
+// ===== Holidays actions =====
+
 function addHoliday() {
 	$date 		= $_POST['date'];
 	$reason 	= $_POST['reason'];
@@ -53,15 +59,6 @@ function addHoliday() {
   $sql = "INSERT INTO holidays (date, reason) VALUES ('$date','$reason')";
   dbQuery($sql);
   header('Location: ../holidays.php');
-  exit();
-}
-
-function deleteUser() {
-	$idUser	= $_GET['uid'];
-
-	$sql	= "DELETE FROM users WHERE id_user = $idUser";
-	dbQuery($sql);
-  header('Location: ../user-list.php');
   exit();
 }
 
@@ -74,6 +71,31 @@ function deleteHoliday() {
   exit();
 }
 
+// ===== User actions =====
+
+function deleteUser() {
+	$idUser	= $_GET['uid'];
+
+	$sql	= "DELETE FROM users WHERE id_user = $idUser";
+	dbQuery($sql);
+  header('Location: ../user-list.php');
+  exit();
+}
+
+// ===== Course actions =====
+
+function addCourse() {
+
+  $course_name  = $_POST['cname'];
+  $start_date   = $_POST['sdate'];
+  $end_date     = $_POST['edate'];
+
+  $sql = "INSERT INTO course (course_name, start_date, end_date) VALUES ('$course_name', '$start_date', '$end_date')";
+  dbQuery($sql);
+  header('Location: ../add-course.php');
+  exit();
+}
+
 function deleteCourse() {
 	$corId	= $_GET['corId'];
 
@@ -82,6 +104,8 @@ function deleteCourse() {
   header('Location: ../add-course.php');
   exit();
 }
+
+// ===== Class actions =====
 
 function deleteClass() {
 	$classId	= $_GET['cId'];
