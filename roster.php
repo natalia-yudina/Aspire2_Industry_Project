@@ -23,9 +23,9 @@
   padding: 0px 20px 0px 20px;
   border-radius: 6px;
   font-weight: 500;
-  color: #fafafa;
+  color: #ffda63;
   background:none;
-  border: 0.1rem solid  #fafafa;
+  border: 0.1rem solid  #ffda63;
   margin-top: 0px;
   margin-bottom: 20px;
   margin-left: 15px;
@@ -33,8 +33,8 @@
 }
 
 .btn:hover {
-  color: #ffda63;
-  border: 0.1rem solid  #ffda63;
+  color: #fafafa;
+  border: 0.1rem solid  #fafafa;
   transition: 0.5ms;
 }
         </style>

@@ -30,7 +30,7 @@
                     <!-- Content -->
                     <div class="container-fluid ">
                         <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
-                            <div class="container p-3">
+                            <div class="container py-1">
                                 <?php include('users-table.php'); ?>
                             </div>
                         </div>

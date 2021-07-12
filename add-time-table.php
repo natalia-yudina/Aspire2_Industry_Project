@@ -26,9 +26,10 @@
             <!-- Content -->
             <div class="container-fluid">
                 <div class="row d-flex justify-content-center g-3 my-2 content-bg">
-                    <div class="col-md-6 p-3">
+                    <div class="col-md-6 px-4 py-3">
 <!-- NI 03-06-2021 begin -->
 <!-- <form action="/action_page.php"> -->
+<h5><i class="fas fa-circle ui-text px-2 fs-6 "></i>Add</h5> 
 <form>
 <!-- NI 03-06-2021 end -->
 <div class="form-group pt-3">
@@ -97,18 +98,19 @@
     <!-- NI 03-06-2021 begin -->
         <!-- <button type="submit" class="btn btn-dark mt-4 mb-5 "> Add Course </button> -->
         
-        <button type="button" class="btn add_new_class"> Add Class<i class="fas fa-plus p-2 "></i></button>
+        <button type="button" class="btn add_new_class my-4 py-3"> Add Class<i class="fas fa-plus px-2"></i></button>
         
     		
     <!-- NI 03-06-2021 end -->
   </form>
 
-  <div class="col-md-6 p-3">
+ 
+                    </div>
+                    <div class="col-md-6 px-4 py-3">
         
         <?php include('classeslist.php'); ?>
                    
   </div>
-                    </div>
                 </div>
             </div>
               <!-- Content END -->

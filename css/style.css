@@ -123,7 +123,7 @@ label {
   color: #ffda63;
   margin-bottom: 20px;
   margin-top: 20px;
-  border: 2px solid  #ffda63;
+  border: 1px solid  #ffda63;
   border-radius: 6px;
   background:none;
  
@@ -132,7 +132,7 @@ label {
 
 .btn:hover {
   color: #fafafa;
-  border: 2px solid  #fafafa;
+  border: 1px solid  #fafafa;
   transition: 0.5ms;
 }
 
