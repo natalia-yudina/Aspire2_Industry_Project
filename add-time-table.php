@@ -26,11 +26,11 @@
             <!-- Content -->
             <div class="container-fluid">
                 <div class="row d-flex justify-content-center g-3 my-2 content-bg">
-                    <div class="col-md-6 px-4 py-3">
+                    <div class="col-md-4 py-3">
 <!-- NI 03-06-2021 begin -->
 <!-- <form action="/action_page.php"> -->
-<h5><i class="fas fa-circle ui-text px-2 fs-6 "></i>Add</h5> 
-<form>
+<h5 class="px-4"><i class="fas fa-circle ui-text p-2 fs-6 "></i>Add</h5> 
+<form class="px-4">
 <!-- NI 03-06-2021 end -->
 <div class="form-group pt-3">
     <label for="hcname">Who is Head Coach?</label>
@@ -106,7 +106,7 @@
 
  
                     </div>
-                    <div class="col-md-6 px-4 py-3">
+                    <div class="col-md-8 px-4 py-3">
         
         <?php include('classeslist.php'); ?>
                    

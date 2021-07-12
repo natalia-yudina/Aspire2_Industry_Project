@@ -2,7 +2,7 @@
 // STD702 s00009622 Natalia Iudina 12.07.2021
 ?>
 
-<h5><i class="fas fa-circle ui-text p-2 fs-6 "></i>Add</h5> 
+
   <form action="<?php echo WEB_ROOT; ?>api/process.php?cmd=course" method="post">
     <div class="form-group pt-1">
       <label for="fname">Course Name</label>
