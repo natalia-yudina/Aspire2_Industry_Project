@@ -3,7 +3,7 @@
 $records = getCoachesList();
 ?>
    
-    <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Registered Coaches</h5>
+    <h5 class="pt-3 pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Registered Coaches</h5>
     <table class="table user-text table-bordered">
       <tr>
         <th style="width: 10px">#</th>

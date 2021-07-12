@@ -29,8 +29,8 @@
                     <!-- Top Navbar END -->
                     <!-- Content -->
                     <div class="container-fluid ">
-                        <div class="row d-flex g-3 my-2 content-bg justify-content-center shadow ">
-                            <div class="container py-1">
+                        <div class="row px-4 d-flex g-3 my-2 content-bg justify-content-center shadow ">
+                            <div class="container pb-4">
                                 <?php include('users-table.php'); ?>
                             </div>
                         </div>
