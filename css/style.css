@@ -6,7 +6,7 @@
   --brand-text-color: #fafafa;
   --content-bg-color: #121212;
   --ui-text-color: #feca0f;
-  --logout-text-color: #ffda63;
+  --logout-text-color: #ff6060;
   --user-text-color: #fafafa;
   --login-bg-color: #fff2c5;
 
@@ -74,7 +74,7 @@ border-radius: 10px;
 }
 
 .logout-text {
-  color: #ffda63;
+  color: #ff6060;
 }
 
 .user-bg {
