@@ -15,6 +15,28 @@
   font-size: 1.1em;
   color: #ffda63;
 }
+
+.btn {
+  width: auto;
+  height: 50px;
+  font-size: 16px;
+  padding: 0px 20px 0px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fafafa;
+  background:none;
+  border: 0.1rem solid  #fafafa;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+
+}
+
+.btn:hover {
+  color: #ffda63;
+  border: 0.1rem solid  #ffda63;
+  transition: 0.5ms;
+}
         </style>
 </head>
 

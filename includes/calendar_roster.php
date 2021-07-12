@@ -18,6 +18,56 @@
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	/* font-size:10px; */
 }
+
+.fc-unthemed th,
+	.fc-unthemed td,
+	.fc-unthemed thead,
+	.fc-unthemed tbody,
+	.fc-unthemed .fc-divider,
+	.fc-unthemed .fc-row,
+	.fc-unthemed .fc-content,
+	.fc-unthemed .fc-popover,
+	.fc-unthemed .fc-list-view,
+	.fc-unthemed .fc-list-heading td {
+		border-color: #414141;
+	}
+
+	.fc-unthemed td.fc-today {
+    background: #353535;
+}
+
+.fc-state-default {
+	background-image: none;
+	background-color: #ffda63;
+	font-weight: 400;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.fc-state-active {
+	background-color: #fafafa;
+	font-weight: 400;
+	text-shadow: none;
+}
+
+.fc-state-disabled {
+	opacity: 0.8;
+}
+.fc-head {
+color: #637373;
+}
+
+.fc-day-number {
+	color:#fafafa;
+}
+
+.fc button .fc-icon {
+	color: #121212;
+}
+
+.fc-state-disabled {
+    opacity: 0.2;
+}
 </style>
 
 
