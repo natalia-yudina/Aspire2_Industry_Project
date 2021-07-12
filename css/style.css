@@ -117,15 +117,23 @@ label {
 
 
 .btn {
-  width: 10rem;
+  width: auto;
   line-height: 1;
   font-weight: 500;
-  color: #0a0a0a;
-  margin-bottom: 35px;
-  margin-top: 35px;
-  border-radius: 50px;
-  background-color: #f3e6e8;
-  background-image: linear-gradient(315deg, #f3e6e8 0%, #d5d0e5 74%);
+  color: #ffda63;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 2px solid  #ffda63;
+  border-radius: 6px;
+  background:none;
+ 
+  
+}
+
+.btn:hover {
+  color: #fafafa;
+  border: 2px solid  #fafafa;
+  transition: 0.5ms;
 }
 
 table th{
