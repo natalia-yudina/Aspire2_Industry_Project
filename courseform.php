@@ -3,7 +3,7 @@
 ?>
 
 
-  <form action="<?php echo WEB_ROOT; ?>api/process.php?cmd=course" method="post">
+  <form action="<?php echo WEB_ROOT; ?>api/process.php?cmd=course" class="py-2" method="post">
     <div class="form-group pt-1">
       <label for="fname">Course Name</label>
       <input type="text" class="form-control" id="cname" placeholder="Enter Course Name" name="cname">

@@ -28,10 +28,10 @@
             <!-- Content -->
             <div class="container-fluid">
                 <div class="row d-flex g-3 my-2 px-3 content-bg justify-content-center">
-                    <div class="col-md-6 p-3">
+                    <div class="col-md-4 p-3">
                     <?php include('holidayform.php'); ?>
                     </div>
-                    <div class="col-md-6 p-3">
+                    <div class="col-md-8 p-3">
                     <?php include('holidayslist.php'); ?>
                    
                     </div>

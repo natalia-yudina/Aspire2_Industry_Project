@@ -32,7 +32,7 @@
 <h5 class="px-4"><i class="fas fa-circle ui-text p-2 fs-6 "></i>Add</h5> 
 <form class="px-4">
 <!-- NI 03-06-2021 end -->
-<div class="form-group pt-3">
+<div class="form-group py-2">
     <label for="hcname">Who is Head Coach?</label>
     <select class="form-control" id="hcname">
       <!-- NI 03-06-2021 begin -->

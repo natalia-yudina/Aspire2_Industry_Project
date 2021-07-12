@@ -28,13 +28,13 @@
             <!-- Content -->
             <div class="container-fluid ">
                 <div class="row d-flex g-3 my-2 px-3 content-bg justify-content-center ">
-                    <div class="col-md-4 p-3">
+                    <div class="col-md-4 px-3 py-3">
 											<!-- NI 12-07-2021 begin -->
-                                            <h5 class=""><i class="fas fa-circle ui-text px-2 fs-6 "></i>Add</h5> 
+                                            <h5><i class="fas fa-circle ui-text px-2 fs-6 "></i>Add</h5> 
 											<?php include('courseform.php'); ?>
 											<!-- NI 12-07-2021 end -->
                     </div>
-  									<div class="col-md-8 p-3">
+  									<div class="col-md-8 px-4 py-3">
                     	<?php include('courseslist.php'); ?>
                     </div>
                 </div>

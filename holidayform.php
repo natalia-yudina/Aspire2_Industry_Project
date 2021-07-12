@@ -6,7 +6,7 @@
 <!-- Horizontal Form -->
   <!-- form start -->
   <!-- <form class="form-horizontal" method="post"> -->
- <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6 "></i>Add Holiday</h5> 
+ <h5 class="pb-2"><i class="fas fa-circle ui-text p-2 fs-6 "></i>Add Holiday</h5> 
   <form action="<?php echo WEB_ROOT; ?>api/process.php?cmd=holiday" method="post">
   <div class="form-group">
   <label for="hdate">Holiday Date</label>  
