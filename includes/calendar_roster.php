@@ -93,7 +93,7 @@ $(function () {
 
     events: function(start, end, timezone, callback) {
 			$.ajax({
-				url	: '<?php echo WEB_ROOT; ?>api/process.php?cmd=calview',
+				url	: '<?php echo WEB_ROOT; ?>api/process.php?cmd=rosterview',
 				dataType: 'json',
 				type	: 'POST',
 				data	: {
@@ -113,7 +113,7 @@ $(function () {
     defaultView: 'agendaWeek',
     allDaySlot: false,
     minTime: "08:00:00",
-    maxTime: "20:00:00",
+    maxTime: "22:00:00",
     height: 'auto',
 
     // slotMinHeight: 500,
@@ -135,7 +135,7 @@ $(function () {
 		// },
 		 // viewRender: function(view, element) {},
 		eventRender: function(ev, element, view) {
-      element.css("font-size", "1.2em");
+      element.css("font-size", "0.8em");
       element.css("padding", "5px");
       element.css("height", "200px");
 		},
