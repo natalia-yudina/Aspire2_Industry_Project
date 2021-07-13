@@ -263,6 +263,7 @@ function rosterView() {
                   $bgClr = '#f39c12';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
+                  $book->description = "description test";                  
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
                }

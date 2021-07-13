@@ -138,6 +138,7 @@ $(function () {
       element.css("font-size", "0.8em");
       element.css("padding", "5px");
       element.css("height", "200px");
+      element.find('.fc-title').append("<br>" + ev.description)      
 		},
 
 		eventAfterRender : function(ev, element, view) {
