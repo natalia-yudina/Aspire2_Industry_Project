@@ -10,6 +10,20 @@
   <!-- /.box-body -->
 </div>
 <!-- /. box -->
+<!-- modal form begin -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<!-- modal form end -->
 <style>
 .fc-disabled {
   background-color: #F0F0F0 !important;
@@ -138,8 +152,12 @@ $(function () {
       element.css("font-size", "0.8em");
       element.css("padding", "5px");
       element.css("height", "200px");
-      element.find('.fc-title').append("<br>" + ev.description)      
+      element.find('.fc-title').append("<br>" + ev.description)
 		},
+    eventClick: function(event) {
+      $("#successModal").modal("show");
+      $("#successModal .modal-body p").text(event.title);
+    },
 
 		eventAfterRender : function(ev, element, view) {
 			if(ev.block == true) {
