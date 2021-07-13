@@ -102,6 +102,8 @@ $(function () {
 			});
 		},
     selectable: true,
+    weekNumbers: true,
+    navLinks: true, // can click day/week names to navigate views
 		eventAfterRender : function(ev, element, view) {
 			if(ev.block == true) {
 				var start = ev.start.format();
