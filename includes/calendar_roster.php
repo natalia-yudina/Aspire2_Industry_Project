@@ -10,16 +10,39 @@
   <!-- /.box-body -->
 </div>
 <!-- /. box -->
-<!-- modal form begin -->
+<!-- The Modal form begin -->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
-<div class="modal-body">
+  <!-- NI 15-07-2021 begin -->
+
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title" style="color:black">
+           <p></p>
+         </h4>
+         <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
+       </div>
+
+       <!-- Modal body -->
+       <div class="modal-body" style="color:black">
+         <p></p>
+       </div>
+
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-info" data-dismiss="modal" (click) = "hide()">Close</button>
+       </div>
+
+     </div>
+   </div>
+ </div>
+<!-- NI 15-07-2021 end -->
+
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
-<p></p>
-</div>
+
 </div>
 </div>
 </div>
@@ -117,7 +140,7 @@ $(function () {
 				success: function(doc) {
 
           //remove old data
-          $('#calendar').fullCalendar('removeEvents');          
+          $('#calendar').fullCalendar('removeEvents');
 					var events = [];
 					callback(doc);
 				}
@@ -159,7 +182,8 @@ $(function () {
 		},
     eventClick: function(event) {
       $("#successModal").modal("show");
-      $("#successModal .modal-body p").text(event.title);
+      $("#successModal .modal-title p").text(event.title);
+      $("#successModal .modal-body p").text(event.description);
     },
 
 		eventAfterRender : function(ev, element, view) {

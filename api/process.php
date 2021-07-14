@@ -353,7 +353,7 @@ function assignedCoaches() {
               while($row_user = dbFetchAssoc($result3)) {
                 	extract($row_user);
                   // Array of names of available coaches
-                  $av_users[] =  $first_name . " " . $last_name;
+                  $av_users[] =  "id = " . $id_user . " name = " . $first_name . " " . $last_name;
               }
               // NI 14-07-2021 end
 
