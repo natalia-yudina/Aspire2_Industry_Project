@@ -2,7 +2,7 @@
 // STD702 s00009622 Natalia Iudina 08.06.2021
 ?>
 
-
+<div class="row">
 <!-- Horizontal Form -->
   <!-- form start -->
   <!-- <form class="form-horizontal" method="post"> -->
@@ -17,7 +17,7 @@
         </div>
       
 
-      <div class="form-group pt-3">
+      <div class="form-group pt-3 pb-2">
       <label for="hdate">Holiday Reason</label>    
 		<span id="sprytf_reason">
           <input type="text" class="form-control input-sm" name="reason" placeholder="Holiday reason" req>
@@ -25,10 +25,11 @@
 		</span>    
       </div>
     
-      <button type="submit" class="btn py-2 my-4">Add Holiday<i class="fas fa-plus p-2 "></i></button>
+    
+      <button type="submit" class="btn w-100 py-2 my-4">Add Holiday<i class="fas fa-plus p-2 "></i></button>
     
   </form>
-
+  </div>
 
 <!-- /.box -->
 <script>

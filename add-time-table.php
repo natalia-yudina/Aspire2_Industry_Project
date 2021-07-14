@@ -87,7 +87,7 @@
     </select>
   </div>
   
-  <div class="row">
+  <div class="row pb-2">
   <div class="col-sm-6 form-group pt-3">
       <label for="stime">Start</label>
       <input type="time" class="form-control" id="stime" name="stime">
