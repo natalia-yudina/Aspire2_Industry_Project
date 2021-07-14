@@ -342,12 +342,27 @@ function assignedCoaches() {
               // $date_calculate_roster = (new Carbon('first ' . $weekday . $start_time, 'UTC'));
               //   $date_calculate_roster_copy = $date_calculate_roster->copy();
 
+              // NI 14-07-2021 begin
+              // Available coaches
+              $av_users = [];
+              $id_class_value = $row['id_class'];
+
+              $sql3 = "SELECT a.id_user, u.first_name, u.last_name FROM availability a JOIN users u ON a.id_user = u.id_user
+              WHERE a.id_class= '$id_class_value' and close_date is null LIMIT 4 ";
+              $result3 = dbQuery($sql3);
+              while($row_user = dbFetchAssoc($result3)) {
+                	extract($row_user);
+                  // Array of names of available coaches
+                  $av_users[] =  $first_name . " " . $last_name;
+              }
+              // NI 14-07-2021 end
+
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
                   $book = new Booking();
                   // $mutable = $date_calculate_roster_copy->isMutable();
                   $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
-                  $book->description = "description124:";
+                  $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
                   $book->start = $date_calculate_roster_copy;
                   // $bgClr = '#f39c12';
                   $bgClr = 'green';

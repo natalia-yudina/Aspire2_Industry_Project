@@ -115,6 +115,9 @@ $(function () {
 					end		: end.format()
 				},
 				success: function(doc) {
+
+          //remove old data
+          $('#calendar').fullCalendar('removeEvents');          
 					var events = [];
 					callback(doc);
 				}
