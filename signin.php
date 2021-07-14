@@ -1,6 +1,4 @@
-<?php
-  include "logcode.php"
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,21 +41,29 @@
 
   <div class="col-md-6 login-bg text-dark login-box">
     <h1 class="text-center text-dark py-4">Sign In</h1>
+    <?php if (isset($_GET['error'])){?>
+       
+      <div class="d-flex justify-content-center" >
+    <div class="alert alert-danger col-md-9" role="alert">
+         <?=$_GET['error']?>
+    </div>
+      </div>
+    <?php } ?>
   <div class="d-flex justify-content-center ">
 
-<form class="w-75 text-dark " action="logcode.php" method="post">
+<form class="w-75 text-dark " action="includes/check_login.php" method="POST">
     <div class="form-group">
-      <label for="email">Enter your email</label>
-      <input type="email" class="form-control mb-3" placeholder="Email address" name="email" required>
+      <label for="email">Your Email</label>
+      <input type="email" class="form-control mb-3" placeholder="Email" name="email" id="email">
     </div>
     <div class="form-group">
       <label for="pwd">Enter your password</label>
-      <input type="password" class="form-control mb-2" placeholder="Password" name="password" required>
+      <input type="password" class="form-control mb-2" placeholder="Password" name="password" id="password">
     </div>
-    <p>
-    <?php echo $message;?>
-    </p>
-    <input type="submit" class="btn " name="login" value="Sign In"></td>
+   
+  
+   
+    <input type="submit" class="btn w-100 " name="login" value="Sign In"></td>
     
   </form>
 

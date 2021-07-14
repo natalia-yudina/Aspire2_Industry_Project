@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['email']))
+{ ?>
+
+
 <?php
 	 // NI 08-06-2021 begin
 	 // include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
@@ -13,6 +20,9 @@
 </head>
 
 <body>
+<?php  
+  if ($_SESSION['role'] == '2')
+   { ?>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <?php $page = 'add-time-table';  include('includes/sidebar.php'); ?>
@@ -127,9 +137,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
-    
+    <script src="js/add_class.js"></script>
+    <?php } ?>
 </body>
 <!-- NI 03-06-2021 begin -->
-<script src="js/add_class.js"></script>
+
   <!-- NI 03-06-2021 end -->
 </html>
+
+<?php } else {
+  header("location: signin.php");
+} ?>

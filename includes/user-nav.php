@@ -16,10 +16,10 @@
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <div class="user-dropdown" style="float:right;">
             <button class="dropbtn bg-transparent text-dark fs-6 fw-bold">
-                <i class="fas fa-caret-down me-2 text-dark fs-5 "></i>Coach
+                <i class="fas fa-caret-down me-2 text-dark fs-5 "></i><?=$_SESSION['fname']?>
             </button>
             <div class="user-dropdown-content">
-                <a href="#">Profile Settings</a>
+                <a href="my-profile.php">Profile Settings</a>
                 <a href="logout.php">Logout</a>
             </div>
         </div>

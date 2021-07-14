@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['email']))
+{ ?>
+
+
 <?php
 require_once 'config.php';
 ?>
@@ -18,6 +25,9 @@ require_once 'config.php';
 </head>
 
 <body>
+<?php  
+  if ($_SESSION['role'] == '2')
+   { ?>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <?php $page = 'time-table';  include('includes/sidebar.php'); ?>
@@ -46,6 +56,10 @@ require_once 'config.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
-    
+    <?php } ?>
 </body>
 </html>
+
+<?php } else {
+  header("location: signin.php");
+} ?>

@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['email']))
+{ ?>
+
+
 <?php
 require_once 'config.php';
 ?>
@@ -76,6 +83,9 @@ table.dataTable.no-footer {
 </head>
 
 <body>
+<?php  
+  
+  if ($_SESSION['role'] == '1') { ?>
     <div class="d-flex user-bg" id="wrapper">
         <!-- Sidebar -->
         <?php $page = 'update-work-days';
@@ -110,5 +120,9 @@ table.dataTable.no-footer {
     <!-- NI 25-06-2021 begin -->
     <script src="js/availability.js"></script>
     <!-- NI 25-06-2021 end -->
+    <?php } ?>
 </body>
 </html>
+<?php } else {
+  header("location: signin.php");
+} ?>

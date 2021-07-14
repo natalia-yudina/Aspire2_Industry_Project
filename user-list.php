@@ -1,3 +1,9 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['email']))
+{ ?>
+
 <?php
         // KU 08-07-2021 begin
         // include $_SERVER['DOCUMENT_ROOT'] . "/Aspire2_Industry_Project/includes/database.php";
@@ -14,6 +20,9 @@
         </head>
 
         <body>
+        <?php  
+  if ($_SESSION['role'] == '2')
+   { ?>
             <div class="d-flex" id="wrapper">
                 <!-- Sidebar -->
                 <?php $page = 'user-list';
@@ -44,7 +53,11 @@
             <script type="text/javascript" src="js/sidebar.js"></script>
             <!-- Bootstrap Bundle -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+            <?php } ?>
         </body>
 
         </html>
+
+        <?php } else {
+  header("location: signin.php");
+} ?>

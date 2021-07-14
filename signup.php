@@ -73,12 +73,17 @@
   <?php
 						if(isset($_POST['singup'])){
 							include 'config.php';
+
+              $md5=$_POST['pwd'];
+              $pass = md5($md5);
+
+
 							$fname = $_POST['fname'];
 							$lname = $_POST['lname'];
 							$email = $_POST['email'];
 							$phone = $_POST['phone'];
 							$address = $_POST['address'];              
-							$pwd = $_POST['pwd'];
+							$pwd = $pass;
 							
 							$qry = "INSERT INTO users (first_name,last_name, email, phone_number, address, password, id_role)
 							VALUES('$fname','$lname','$email','$phone','$address','$pwd', '1')";
