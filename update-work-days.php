@@ -50,7 +50,7 @@ table.dataTable.no-footer {
 }
 
 .dataTables_wrapper .dataTables_filter input {
-    border: 1px solid #ffda63;
+    border: 1px solid #7d7d7d;
     border-radius: 3px;
     padding: 5px;
     background-color: transparent;
