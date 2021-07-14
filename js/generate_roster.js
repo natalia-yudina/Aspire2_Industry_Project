@@ -4,7 +4,7 @@ $(document).ready(function() {
      $(document).on('click', '.generate_roster', function() {
 
        $.ajax({
- 				url	: 'api/process.php?cmd=rosterview',
+ 				url	: 'api/process.php?cmd=assignedCoaches',
  				dataType: 'json',
  				type	: 'POST',
  				data	: {
