@@ -7,6 +7,17 @@ require_once 'config.php';
 
 <head>
     <?php include('includes/head.php'); ?>
+    <style>
+        .icon-color {
+          color: #3b41f7;
+        }
+
+        .form-control { 
+    color: #212529;
+    background-color: #121212;
+    border: 1px solid #b8b8b8;
+}
+        </style>
 </head>
 
 <body>
@@ -23,15 +34,15 @@ require_once 'config.php';
             <div class="container-fluid py-1 ">
                 <div class="row content-bg px-3 py-3">
                     <div class="col-md-6 py-3 px-3">
-                        <div class="d-flex justify-content-center user-info py-4">
+                        <div class="d-flex px-4 user-info py-4">
                             <div class="d-flex flex-column user-text">
-                                <div class="text-center fw-bold  ">
-                                    <i class="fas fa-user-circle user-text fs-2"></i>
-                                    <p style="color:#ffd75e;">Jhon Doe</p>
+                                <div class="fw-bold pb-2">
+                                    <i class="fas fa-circle fs-6 p-2" style="color:#feca11;;" ></i>Jhon Doe     
                                 </div>
-                                <div><i class="fas fa-mobile-alt second-text fs-6 p-2"></i> 022 558 22 36</div>
-                                <div><i class="fas fa-envelope second-text fs-6 p-2"></i>jhon@gmail.com</div>
-                                <div><i class="fas fa-map-marker-alt second-text fs-6 p-2"></i>457A Western Springs Rd.</div>
+                                <div><i class="fas fa-envelope fs-6 p-2"></i>jhon@gmail.com</div>
+                                <div><i class="fas fa-mobile-alt  fs-6 p-2"></i> 022 558 22 36</div>
+                               
+                                <div><i class="fas fa-map-marker-alt  fs-6 p-2"></i>457A Western Springs Rd.</div>
                             </div>
                         </div>
                     </div>
@@ -39,42 +50,54 @@ require_once 'config.php';
                     <div class="col-md-6 py-3 px-3 user-text">
                         <div class="d-flex justify-content-center user-info py-4">
                             <div class="d-flex flex-column">
-                                <div class="text-center fw-bold">
-                                    <i class="fas fa-edit user-text fs-3"></i>
+                                <div class="text-center fw-bold pt-1">
+                                    <i class="fas fa-user-edit fs-6" style="color:#feca11;;"></i>
                                     <p>Edit Profile</p>
                                 </div>
                                 <!-- Form Start-->
                              
                                 <form>
                                     <!-- NI 02-06-2021 end -->
-                                    <div class="form-group pt-3">
+                                    <div class="row px-5 py-1">
+                                       
+                                    <div class="col-md-6 form-group">
                                         <label for="fname">First Name</label>
-                                        <input type="text" class="form-control px-5" id="fname" name="fname">
+                                        <input type="text" class="form-control" id="fname" name="fname">
                                     </div>
-
-                                    <div class="form-group pt-3">
+                                   
+                                   
+                                    <div class="col-md-6 form-group">
                                         <label for="lname">Last Name</label>
                                         <input type="text" class="form-control" id="lname" name="lname">
                                     </div>
-
-                                    <div class="form-group pt-3">
+                                 
+                            
+                                    
+     
+                                    <div class="col-md-6 form-group pt-3">
                                         <label for="email">E-mail</label>
                                         <input type="email" class="form-control" id="email" name="email">
                                     </div>
 
-                                    <div class="form-group pt-3">
+                                    <div class="col-md-6 form-group pt-3">
                                         <label for="phone">Contact Number</label>
                                         <input type="phone" class="form-control" id="phone" name="phone">
                                     </div>
 
-                                    <div class="form-group pt-3">
+                                    <div class="col-md-12 form-group pt-3">
                                         <label for="address">Address</label>
                                         <input type="address" class="form-control" id="address" name="address">
                                     </div>
-
-                                    <div class="text-center">
-                                        <button type="button" class="btn py-3"> Save </button>
+                                     
+                                    <div class="col-md-12">
+                                    <div class="d-flex justify-content-end py-3">
+                                        <button type="button" class="btn py-3 w-100"> Update Profile </button>
                                     </div>
+                                    </div>
+
+                                    </div>
+
+                                    
                                 </form>
                             
                                 <!-- Form End -->
