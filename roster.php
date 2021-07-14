@@ -54,8 +54,10 @@
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center">
                     <div class="col-md-12 p-3">
                       <button type="button" class="btn generate_roster"><i class="fas fa-user-cog"></i> Generate roster </button>
+                      <button type="button" class="btn save_roster"><i class="fas "></i> Save and mail </button>
                     <?php include('includes/calendar_roster.php') ?>
                     </div>
+
                 </div>
             </div>
               <!-- Content END -->
