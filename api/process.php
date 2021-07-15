@@ -354,7 +354,9 @@ function assignedCoaches() {
               while($row_user = dbFetchAssoc($result3)) {
                 	extract($row_user);
                   // Array of names of available coaches
-                  $av_users[] =  "id = " . $id_user . " name = " . $first_name . " " . $last_name;
+                  // $av_users[] =  "id = " . $id_user . " name = " . $first_name . " " . $last_name;
+                  $av_users[] =  $first_name . " " . $last_name;
+
                   // $assigned_coaches[] = array($id_user, $first_name, $last_name);
                   $assigned_coaches[] = $id_user;
               }

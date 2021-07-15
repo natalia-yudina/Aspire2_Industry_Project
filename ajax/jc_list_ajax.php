@@ -28,7 +28,7 @@ if($_POST['id_class'])
 
                <!-- Modal body -->
                <!-- <input type='hidden' name='id_class' id='id_class' value=''> -->
-               <!-- <input name='id_class_text' id='id_class_text' value=''> -->
+                <input type='hidden' name='id_event_text' id='id_event_text' value=''> 
              <div class='modal-body' style='color:black'>
                  <p></p>
 

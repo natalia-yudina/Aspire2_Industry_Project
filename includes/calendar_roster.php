@@ -1,6 +1,6 @@
 
 
-<div id="calendar"></div>
+<!-- <div id="calendar"></div> -->
 <div class="box box-primary">
 
   <div class="box-body no-padding">
@@ -82,6 +82,7 @@ color: #637373;
 <script language="javascript">
 $(function () {
 
+var event_id;
 
 	$('#calendar').fullCalendar({
     // like '7p', for all other views
@@ -167,7 +168,8 @@ $(function () {
        var jc_2 = event.jc_list[1];
        var jc_3 = event.jc_list[2];
        var jc_4 = event.jc_list[3];
-       var event_id = event._id;
+       // var event_id = event._id;
+       console.log(event.jc_list);
 
           $.ajax({
               type: 'post',
@@ -177,16 +179,17 @@ $(function () {
                   jc_1: jc_1,
                   jc_2: jc_2,
                   jc_3: jc_3,
-                  jc_4: jc_4,
-                  event_id: event_id
+                  jc_4: jc_4
+                  // ,
+                  // event_id: event_id
               },
               success: function(response) {
                   $('.modal-dialog').html(response);
                   $("#successModal .modal-title p").text(event.title);
                   $("#successModal .modal-title #hc").text(event.hc);
-                  $('#id_class_text').val(event.ev_id_class);
+                  $('#id_event_text').val(event._id);
                   $('#successModal').modal('show');
-                  // console.log(event);
+                  console.log(event);
 
               }
           });
@@ -201,7 +204,30 @@ $(function () {
 		}
 
 	});
-});//off
+
+  $(document).on('click', '.ev_update', function() {
+
+    // var id = $(this).attr('data-id');
+
+    var event_id = $('#id_event_text').val();
+    var result_set = $('#calendar').fullCalendar( 'clientEvents', event_id);
+    var event_to_update = result_set[0];
+
+    // var selected_jc1_id = $('#s1').val();
+    var selected_jc1_string = $("#s1 option:selected").text();
+    var selected_jc2_string = $("#s2 option:selected").text();
+    var selected_jc3_string = $("#s3 option:selected").text();
+    var selected_jc4_string = $("#s4 option:selected").text();
+
+    // event_to_update.jc_list =[];
+    // event_to_update.jc_list = [selected_jc1, selected_jc2, selected_jc3, selected_jc4];
+
+    event_to_update.description = "Jr.Coach List: \n " + selected_jc1_string + ",\n" + selected_jc2_string + ",\n" + selected_jc3_string + ",\n" + selected_jc4_string;
+    $('#calendar').fullCalendar('updateEvent', event_to_update);
+
+  });
+
+});
 </script>
 
 <!-- fc-agendaWeek-view -->
