@@ -355,7 +355,8 @@ function assignedCoaches() {
                 	extract($row_user);
                   // Array of names of available coaches
                   $av_users[] =  "id = " . $id_user . " name = " . $first_name . " " . $last_name;
-                  $assigned_coaches[] = array($id_user, $first_name, $last_name);
+                  // $assigned_coaches[] = array($id_user, $first_name, $last_name);
+                  $assigned_coaches[] = $id_user;
               }
               // NI 14-07-2021 end
 

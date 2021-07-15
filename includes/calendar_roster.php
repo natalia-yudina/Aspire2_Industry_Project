@@ -163,21 +163,28 @@ $(function () {
       // id_class.val(event.ev_id_class);
 
        var id_class = event.ev_id_class;
-       // var jc_list = event.jc_list;
+       var jc_1 = event.jc_list[0];
+       var jc_2 = event.jc_list[1];
+       var jc_3 = event.jc_list[2];
+       var jc_4 = event.jc_list[3];
 
           $.ajax({
               type: 'post',
               url: 'ajax/jc_list_ajax.php',
               data: {
                   id_class: id_class,
-                  // jc_list: jc_list
+                  jc_1: jc_1,
+                  jc_2: jc_2,
+                  jc_3: jc_3,
+                  jc_4: jc_4
               },
               success: function(response) {
                   $('.modal-dialog').html(response);
                   $("#successModal .modal-title p").text(event.title);
                   $("#successModal .modal-title #hc").text(event.hc);
-                  // $('#id_class_text').val(event.ev_id_class);
+                  $('#id_class_text').val(event.ev_id_class);
                   $('#successModal').modal('show');
+                  console.log(event.jc_list[0]);
               }
           });
 

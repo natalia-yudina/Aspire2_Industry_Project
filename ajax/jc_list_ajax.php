@@ -3,7 +3,11 @@
 
 if($_POST['id_class'])
 {
-	$id_class      = $_POST["id_class"];
+	$id_class  = $_POST["id_class"];
+	$jc_1      = $_POST["jc_1"];
+	$jc_2      = $_POST["jc_2"];
+	$jc_3      = $_POST["jc_3"];
+	$jc_4      = $_POST["jc_4"];
 
 // 	$query = $mysqli->query("SELECT * FROM car WHERE id=".$id);
 // 	$myrow = $query->fetch_assoc();
@@ -45,9 +49,9 @@ if($_POST['id_class'])
 
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
-                            $selected = false;
-                            // $selected = $id_user == $myrow['id_user']) ? ' selected' : '';
-                          echo "<option>" . $first_name . " " . $last_name . "</option>";
+                            $selected = ($id_user == $jc_1) ? ' selected' : '';
+                          // echo "<option>" . $first_name . " " . $last_name . "</option>";
+                          echo "<option ".$selected." value=" . $jc_1 .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -57,8 +61,8 @@ if($_POST['id_class'])
                         mysqli_data_seek($list_result,0);
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
-                            $selected = false;
-                          echo "<option>" . $first_name . " " . $last_name . "</option>";
+                            $selected = ($id_user == $jc_2) ? ' selected' : '';
+                          echo "<option ".$selected." value=" . $jc_2 .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -68,8 +72,8 @@ if($_POST['id_class'])
                         mysqli_data_seek($list_result,0);
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
-                            $selected = false;
-                          echo "<option>" . $first_name . " " . $last_name . "</option>";
+                            $selected = ($id_user == $jc_3) ? ' selected' : '';
+                          echo "<option ".$selected." value=" . $jc_3 .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -79,8 +83,8 @@ if($_POST['id_class'])
                         mysqli_data_seek($list_result,0);
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
-                            $selected = false;
-                          echo "<option>" . $first_name . " " . $last_name . "</option>";
+                            $selected = ($id_user == $jc_4) ? ' selected' : '';
+                          echo "<option ".$selected." value=" . $jc_4 .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
