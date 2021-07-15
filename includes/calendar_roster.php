@@ -213,14 +213,18 @@ var event_id;
     var result_set = $('#calendar').fullCalendar( 'clientEvents', event_id);
     var event_to_update = result_set[0];
 
-    // var selected_jc1_id = $('#s1').val();
+    var selected_jc1_id = $('#s1').val();
+    var selected_jc2_id = $('#s2').val();
+    var selected_jc3_id = $('#s3').val();
+    var selected_jc4_id = $('#s4').val();
+
     var selected_jc1_string = $("#s1 option:selected").text();
     var selected_jc2_string = $("#s2 option:selected").text();
     var selected_jc3_string = $("#s3 option:selected").text();
     var selected_jc4_string = $("#s4 option:selected").text();
 
-    // event_to_update.jc_list =[];
-    // event_to_update.jc_list = [selected_jc1, selected_jc2, selected_jc3, selected_jc4];
+    event_to_update.jc_list =[];
+    event_to_update.jc_list = [selected_jc1_id, selected_jc2_id, selected_jc3_id, selected_jc4_id];
 
     event_to_update.description = "Jr.Coach List: \n " + selected_jc1_string + ",\n" + selected_jc2_string + ",\n" + selected_jc3_string + ",\n" + selected_jc4_string;
     $('#calendar').fullCalendar('updateEvent', event_to_update);

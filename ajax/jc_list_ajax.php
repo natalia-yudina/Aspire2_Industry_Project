@@ -28,7 +28,7 @@ if($_POST['id_class'])
 
                <!-- Modal body -->
                <!-- <input type='hidden' name='id_class' id='id_class' value=''> -->
-                <input type='hidden' name='id_event_text' id='id_event_text' value=''> 
+                <input type='hidden' name='id_event_text' id='id_event_text' value=''>
              <div class='modal-body' style='color:black'>
                  <p></p>
 
@@ -51,7 +51,7 @@ if($_POST['id_class'])
                           extract($row_user);
                             $selected = ($id_user == $jc_1) ? ' selected' : '';
                           // echo "<option>" . $first_name . " " . $last_name . "</option>";
-                          echo "<option ".$selected." value=" . $jc_1 .">" . $first_name . " " . $last_name . "</option>";
+                          echo "<option ".$selected." value=" . $id_user .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -62,7 +62,7 @@ if($_POST['id_class'])
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
                             $selected = ($id_user == $jc_2) ? ' selected' : '';
-                          echo "<option ".$selected." value=" . $jc_2 .">" . $first_name . " " . $last_name . "</option>";
+                          echo "<option ".$selected." value=" . $id_user .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -73,7 +73,7 @@ if($_POST['id_class'])
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
                             $selected = ($id_user == $jc_3) ? ' selected' : '';
-                          echo "<option ".$selected." value=" . $jc_3 .">" . $first_name . " " . $last_name . "</option>";
+                          echo "<option ".$selected." value=" . $id_user .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
@@ -84,7 +84,7 @@ if($_POST['id_class'])
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
                             $selected = ($id_user == $jc_4) ? ' selected' : '';
-                          echo "<option ".$selected." value=" . $jc_4 .">" . $first_name . " " . $last_name . "</option>";
+                          echo "<option ".$selected." value=" . $id_user .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
                  </select>
