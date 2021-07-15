@@ -10,107 +10,14 @@
   <!-- /.box-body -->
 </div>
 <!-- /. box -->
+
 <!-- The Modal form begin -->
-<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <!-- NI 15-07-2021 begin -->
-
-       <!-- Modal Header -->
-       <div class="modal-header">
-         <h4 class="modal-title" style="color:black">
-           <p></p>
-           <p id="hc"></p>
-         </h4>
-         <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
-       </div>
-
-       <!-- Modal body -->
-       <!-- <input type="hidden" name="id_class" id="id_class" value=""> -->
-       <input name="id_class" id="id_class" value="">
-     <div class="modal-body" style="color:black">
-         <p></p>
-
-         <form class="user_action_form">
-
-             <div class="form-group row">
-                 <label for="s1" style="color:black" class="col-md-4 col-form-label text-md-right">List of coaches:</label>
-                 <div class="col-md-6">
-
-          <?php
-          // get available coaches
-          // event_type.val();
-          $query = "SELECT a.id_user, u.first_name, u.last_name FROM availability a JOIN users u ON a.id_user = u.id_user";
-           // WHERE a.id_class=";
-          $list_result = dbQuery($query);
-           ?>
-         <select class="form-select" name="s1" id="s1">
-             <option value="0"> - Select - </option>
-              <?php
-                while($row_user = dbFetchAssoc($list_result)) {
-                  extract($row_user);
-                    $selected = false;
-                    // $selected = $id_user == $myrow['id_user']) ? ' selected' : '';
-                  echo "<option>" . $first_name . " " . $last_name . "</option>";
-                }
-              ?>
-         </select>
-         <select class="form-select" name="s2" id="s2">
-             <option value="0"> - Select - </option>
-              <?php
-                mysqli_data_seek($list_result,0);
-                while($row_user = dbFetchAssoc($list_result)) {
-                  extract($row_user);
-                    $selected = false;
-                  echo "<option>" . $first_name . " " . $last_name . "</option>";
-                }
-              ?>
-         </select>
-         <select class="form-select" name="s3" id="s3">
-             <option value="0"> - Select - </option>
-              <?php
-                mysqli_data_seek($list_result,0);
-                while($row_user = dbFetchAssoc($list_result)) {
-                  extract($row_user);
-                    $selected = false;
-                  echo "<option>" . $first_name . " " . $last_name . "</option>";
-                }
-              ?>
-         </select>
-         <select class="form-select" name="s4" id="s4">
-             <option value="0"> - Select - </option>
-              <?php
-                mysqli_data_seek($list_result,0);
-                while($row_user = dbFetchAssoc($list_result)) {
-                  extract($row_user);
-                    $selected = false;
-                  echo "<option>" . $first_name . " " . $last_name . "</option>";
-                }
-              ?>
-         </select>
-     </div>
- </div>
-</form>
-       </div>
-
-       <!-- Modal footer -->
-       <div class="modal-footer">
-         <button type="button" class="btn btn-info" data-dismiss="modal" (click) = "hide()">Close</button>
-       </div>
-
-     </div>
-   </div>
- </div>
-<!-- NI 15-07-2021 end -->
-
-<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button> -->
-
+<div class="modal fade" id="successModal">
+	<div class='modal-dialog'>
+	</div>
 </div>
-</div>
-</div>
-<!-- modal form end -->
+<!-- The Modal form end -->
+
 <style>
 .fc-disabled {
   background-color: #F0F0F0 !important;
@@ -175,7 +82,6 @@ color: #637373;
 <script language="javascript">
 $(function () {
 
-  var id_class = $('#id_class');
 
 	$('#calendar').fullCalendar({
     // like '7p', for all other views
@@ -248,12 +154,33 @@ $(function () {
       element.find('.fc-title').append("<br>" + ev.description)
 		},
     eventClick: function(event) {
-      $("#successModal").modal("show");
-      $("#successModal .modal-title p").text(event.title);
-      $("#successModal .modal-title #hc").text(event.hc);      
-      $("#successModal .modal-body p").text(event.description);
-      console.log(event);
-      id_class.val(event.ev_id_class);
+      // $("#successModal").modal("show");
+
+      // $("#successModal .modal-title p").text(event.title);
+      // $("#successModal .modal-title #hc").text(event.hc);
+      // $("#successModal .modal-body p").text(event.description);
+      // console.log(event);
+      // id_class.val(event.ev_id_class);
+
+       var id_class = event.ev_id_class;
+       // var jc_list = event.jc_list;
+
+          $.ajax({
+              type: 'post',
+              url: 'ajax/jc_list_ajax.php',
+              data: {
+                  id_class: id_class,
+                  // jc_list: jc_list
+              },
+              success: function(response) {
+                  $('.modal-dialog').html(response);
+                  $("#successModal .modal-title p").text(event.title);
+                  $("#successModal .modal-title #hc").text(event.hc);
+                  // $('#id_class_text').val(event.ev_id_class);
+                  $('#successModal').modal('show');
+              }
+          });
+
     },
 
 		eventAfterRender : function(ev, element, view) {
