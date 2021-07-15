@@ -167,6 +167,7 @@ $(function () {
        var jc_2 = event.jc_list[1];
        var jc_3 = event.jc_list[2];
        var jc_4 = event.jc_list[3];
+       var event_id = event._id;
 
           $.ajax({
               type: 'post',
@@ -176,7 +177,8 @@ $(function () {
                   jc_1: jc_1,
                   jc_2: jc_2,
                   jc_3: jc_3,
-                  jc_4: jc_4
+                  jc_4: jc_4,
+                  event_id: event_id
               },
               success: function(response) {
                   $('.modal-dialog').html(response);
@@ -184,7 +186,8 @@ $(function () {
                   $("#successModal .modal-title #hc").text(event.hc);
                   $('#id_class_text').val(event.ev_id_class);
                   $('#successModal').modal('show');
-                  console.log(event.jc_list[0]);
+                  // console.log(event);
+
               }
           });
 

@@ -95,7 +95,8 @@ if($_POST['id_class'])
 
                <!-- Modal footer -->
                <div class='modal-footer'>
-                 <button type='button' class='btn btn-info' data-dismiss='modal' (click) = 'hide()'>Close</button>
+                  <button type='button' class='btn btn-success ev_update' data-id='$id_class' data-action='update'>Update</button>
+                  <button type='button' class='btn btn-success' data-dismiss='modal'>Close</button>
                </div>
 
              </div>
