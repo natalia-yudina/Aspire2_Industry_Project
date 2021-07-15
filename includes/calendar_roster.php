@@ -1,15 +1,14 @@
 
 
-<!-- <div id="calendar"></div> -->
 <div class="box box-primary">
 
   <div class="box-body no-padding">
     <!-- THE CALENDAR -->
     <div id="calendar"></div>
   </div>
-  <!-- /.box-body -->
+
 </div>
-<!-- /. box -->
+
 
 <!-- The Modal form begin -->
 <div class="modal fade" id="successModal">
@@ -155,21 +154,19 @@ var event_id;
       element.find('.fc-title').append("<br>" + ev.description)
 		},
     eventClick: function(event) {
-      // $("#successModal").modal("show");
 
       // $("#successModal .modal-title p").text(event.title);
       // $("#successModal .modal-title #hc").text(event.hc);
       // $("#successModal .modal-body p").text(event.description);
-      // console.log(event);
-      // id_class.val(event.ev_id_class);
 
+      // id_class.val(event.ev_id_class);
+      if (event.jc_list !== null) {
        var id_class = event.ev_id_class;
        var jc_1 = event.jc_list[0];
        var jc_2 = event.jc_list[1];
        var jc_3 = event.jc_list[2];
        var jc_4 = event.jc_list[3];
        // var event_id = event._id;
-       console.log(event.jc_list);
 
           $.ajax({
               type: 'post',
@@ -184,15 +181,15 @@ var event_id;
                   // event_id: event_id
               },
               success: function(response) {
+                  // Show The Modal Form
                   $('.modal-dialog').html(response);
                   $("#successModal .modal-title p").text(event.title);
                   $("#successModal .modal-title #hc").text(event.hc);
                   $('#id_event_text').val(event._id);
                   $('#successModal').modal('show');
-                  console.log(event);
-
               }
           });
+        }
 
     },
 
