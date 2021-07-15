@@ -17,7 +17,10 @@ class Booking {
 	public $className;
 	public $block = false;
 	public $description;
-		
+
+	public $jc_list;
+	public $ev_id_class;
+	public $hc;		
 	public function __constructor($t, $s) {
 		$this->title = $t;
 		$this->start = $s;

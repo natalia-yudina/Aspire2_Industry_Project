@@ -345,6 +345,7 @@ function assignedCoaches() {
               // NI 14-07-2021 begin
               // Available coaches
               $av_users = [];
+              $assigned_coaches = [];
               $id_class_value = $row['id_class'];
 
               $sql3 = "SELECT a.id_user, u.first_name, u.last_name FROM availability a JOIN users u ON a.id_user = u.id_user
@@ -354,6 +355,7 @@ function assignedCoaches() {
                 	extract($row_user);
                   // Array of names of available coaches
                   $av_users[] =  "id = " . $id_user . " name = " . $first_name . " " . $last_name;
+                  $assigned_coaches[] = array($id_user, $first_name, $last_name);
               }
               // NI 14-07-2021 end
 
@@ -361,7 +363,9 @@ function assignedCoaches() {
                {
                   $book = new Booking();
                   // $mutable = $date_calculate_roster_copy->isMutable();
-                  $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
+                  // $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
+                  $book->title = $course_name;
+
                   $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
                   $book->start = $date_calculate_roster_copy;
                   // $bgClr = '#f39c12';
@@ -370,7 +374,10 @@ function assignedCoaches() {
                   $book->borderColor = $bgClr;
                   // $book->color = 'blue';
                   // $book->end = $end_calculate;
-                  $book->extendedProps = "kk";
+                  // $book->extendedProps = "kk";
+                  $book->jc_list = $assigned_coaches;
+                  $book->ev_id_class = $id_class_value;
+                  $book->hc = "Head coach: " . $hc_first_name . " " . $hc_last_name;
                   // $book->id = "klk";
                     // $department = 'BioChemistry'
 

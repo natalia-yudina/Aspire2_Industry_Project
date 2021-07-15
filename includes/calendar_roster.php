@@ -20,12 +20,15 @@
        <div class="modal-header">
          <h4 class="modal-title" style="color:black">
            <p></p>
+           <p id="hc"></p>
          </h4>
          <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
        </div>
 
        <!-- Modal body -->
-       <div class="modal-body" style="color:black">
+       <!-- <input type="hidden" name="id_class" id="id_class" value=""> -->
+       <input name="id_class" id="id_class" value="">
+     <div class="modal-body" style="color:black">
          <p></p>
 
          <form class="user_action_form">
@@ -36,7 +39,9 @@
 
           <?php
           // get available coaches
-          $query = "SELECT a.id_user, u.first_name FROM availability a JOIN users u ON a.id_user = u.id_user";
+          // event_type.val();
+          $query = "SELECT a.id_user, u.first_name, u.last_name FROM availability a JOIN users u ON a.id_user = u.id_user";
+           // WHERE a.id_class=";
           $list_result = dbQuery($query);
            ?>
          <select class="form-select" name="s1" id="s1">
@@ -45,7 +50,8 @@
                 while($row_user = dbFetchAssoc($list_result)) {
                   extract($row_user);
                     $selected = false;
-                  echo "<option>" . $first_name . "</option>";
+                    // $selected = $id_user == $myrow['id_user']) ? ' selected' : '';
+                  echo "<option>" . $first_name . " " . $last_name . "</option>";
                 }
               ?>
          </select>
@@ -56,7 +62,7 @@
                 while($row_user = dbFetchAssoc($list_result)) {
                   extract($row_user);
                     $selected = false;
-                  echo "<option>" . $first_name . "</option>";
+                  echo "<option>" . $first_name . " " . $last_name . "</option>";
                 }
               ?>
          </select>
@@ -67,7 +73,7 @@
                 while($row_user = dbFetchAssoc($list_result)) {
                   extract($row_user);
                     $selected = false;
-                  echo "<option>" . $first_name . "</option>";
+                  echo "<option>" . $first_name . " " . $last_name . "</option>";
                 }
               ?>
          </select>
@@ -78,7 +84,7 @@
                 while($row_user = dbFetchAssoc($list_result)) {
                   extract($row_user);
                     $selected = false;
-                  echo "<option>" . $first_name . "</option>";
+                  echo "<option>" . $first_name . " " . $last_name . "</option>";
                 }
               ?>
          </select>
@@ -168,6 +174,9 @@ color: #637373;
 
 <script language="javascript">
 $(function () {
+
+  var id_class = $('#id_class');
+
 	$('#calendar').fullCalendar({
     // like '7p', for all other views
     // timeFormat: 'H(:mm)t',
@@ -241,7 +250,10 @@ $(function () {
     eventClick: function(event) {
       $("#successModal").modal("show");
       $("#successModal .modal-title p").text(event.title);
+      $("#successModal .modal-title #hc").text(event.hc);      
       $("#successModal .modal-body p").text(event.description);
+      console.log(event);
+      id_class.val(event.ev_id_class);
     },
 
 		eventAfterRender : function(ev, element, view) {
