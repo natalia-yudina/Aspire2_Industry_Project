@@ -31,22 +31,56 @@
          <form class="user_action_form">
 
              <div class="form-group row">
-                 <label for="user_id" style="color:black" class="col-md-4 col-form-label text-md-right">List of coaches:</label>
+                 <label for="s1" style="color:black" class="col-md-4 col-form-label text-md-right">List of coaches:</label>
                  <div class="col-md-6">
 
-         <select class="form-control" name="user_id" id="user_id">
+          <?php
+          // get available coaches
+          $query = "SELECT a.id_user, u.first_name FROM availability a JOIN users u ON a.id_user = u.id_user";
+          $list_result = dbQuery($query);
+           ?>
+         <select class="form-select" name="s1" id="s1">
              <option value="0"> - Select - </option>
-             <?php
-   $query = "SELECT a.id_user, u.first_name FROM availability a JOIN users u ON a.id_user = u.id_user";
-   $list_result = dbQuery($query);
-   while($row_user = dbFetchAssoc($list_result)) {
-     extract($row_user);
-
-        $selected = false;
-
-     echo "<option>" . $first_name . "</option>";
-   }
-?>
+              <?php
+                while($row_user = dbFetchAssoc($list_result)) {
+                  extract($row_user);
+                    $selected = false;
+                  echo "<option>" . $first_name . "</option>";
+                }
+              ?>
+         </select>
+         <select class="form-select" name="s2" id="s2">
+             <option value="0"> - Select - </option>
+              <?php
+                mysqli_data_seek($list_result,0);
+                while($row_user = dbFetchAssoc($list_result)) {
+                  extract($row_user);
+                    $selected = false;
+                  echo "<option>" . $first_name . "</option>";
+                }
+              ?>
+         </select>
+         <select class="form-select" name="s3" id="s3">
+             <option value="0"> - Select - </option>
+              <?php
+                mysqli_data_seek($list_result,0);
+                while($row_user = dbFetchAssoc($list_result)) {
+                  extract($row_user);
+                    $selected = false;
+                  echo "<option>" . $first_name . "</option>";
+                }
+              ?>
+         </select>
+         <select class="form-select" name="s4" id="s4">
+             <option value="0"> - Select - </option>
+              <?php
+                mysqli_data_seek($list_result,0);
+                while($row_user = dbFetchAssoc($list_result)) {
+                  extract($row_user);
+                    $selected = false;
+                  echo "<option>" . $first_name . "</option>";
+                }
+              ?>
          </select>
      </div>
  </div>
