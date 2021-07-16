@@ -32,4 +32,35 @@ $(document).ready(function() {
 
     });
     // Button "Generate roster" click end
+
+    // Button "Save roster" click begin
+     $(document).on('click', '.save_roster', function() {
+       //get an array of all events
+       var all_events = $('#calendar').fullCalendar('clientEvents');
+       console.log(all_events);
+
+       // create string from array for ajax
+       var  all_events_string= JSON.stringify(all_events,['start','ev_id_class', 'jc_list']);
+
+       console.log(all_events_string);
+       // var a = $.JSON.encode(all_events);
+       $.ajax({
+ 				url	: 'api/process.php?cmd=save_roster',
+ 				dataType: 'json',
+        data	: {
+            myJsonString: all_events_string
+ 				},
+ 				type	: 'POST',
+        success: function(response) {
+
+        Swal.fire(
+            'Congratulations!',
+            'Roster has just been saved',
+            'success'
+        )
+ 				}
+ 			});
+
+    });
+    // Button "Save roster" click end
 });
