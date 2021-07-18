@@ -42,16 +42,18 @@ $(document).ready(function() {
        // create string from array for ajax
        var  all_events_string= JSON.stringify(all_events,['start','ev_id_class', 'jc_list']);
 
+       var test = "test-test-test";
        console.log(all_events_string);
        // var a = $.JSON.encode(all_events);
        $.ajax({
- 				url	: 'api/process.php?cmd=save_roster',
+ 				url	: 'ajax/roster_update_ajax.php',
  				dataType: 'json',
         data	: {
-            myJsonString: all_events_string
+            all_events_string: all_events_string
  				},
  				type	: 'POST',
         success: function(response) {
+          console.log(response.resultOK);
 
         Swal.fire(
             'Congratulations!',
