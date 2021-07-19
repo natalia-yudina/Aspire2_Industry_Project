@@ -228,6 +228,23 @@ function rosterView() {
       $active_courses[] =  array($id_course, $start_calculate, $end_calculate);
   }
 
+  // Assigned coaches
+  // $sql_coaches = "SELECT * FROM history_availability WHERE shift_date BETWEEN '$start' and '$end'";
+  $sql_coaches = "SELECT h.id_class, h.id_user, u.first_name, u.last_name  FROM history_availability as h join users as u
+  on h.id_user=u.id_user WHERE shift_date BETWEEN '$start' and '$end'";
+
+  $sql_coaches = "SELECT h.id_class,
+  GROUP_CONCAT(u.first_name, ' ', u.last_name SEPARATOR '; ') AS coahes
+  FROM history_availability as h join users as u on h.id_user=u.id_user
+  WHERE shift_date BETWEEN '$start' and '$end' group by h.id_class";
+
+  $result_coaches = dbQuery($sql_coaches);
+  while($row = dbFetchAssoc($result_coaches)) {
+    	extract($row);
+      // Array of coaches with class and shift dates
+      $assigned_coaches[] =  array($id_class, $coahes);
+  }
+
   // Classes of courses
   $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
   u.first_name as hc_first_name, u.last_name as hc_last_name
@@ -258,18 +275,36 @@ function rosterView() {
               // $date_calculate_roster = (new Carbon('first ' . $weekday . $start_time, 'UTC'));
               //   $date_calculate_roster_copy = $date_calculate_roster->copy();
 
+              $coaches_list = "";
+              foreach($assigned_coaches as $val_coaches => $massiv) {
+                if ($massiv[0] == $id_class) {
+
+                  $coaches_list = "Jr. Coaches List: " . $massiv[1];
+                }
+              //
+              //   // $index = array_search($course_from_class,$val_arr,true);
+              //   //  if ($index !== false) {
+              //   //    $start_class = $val_arr[1];
+              //   //    $end_class = $val_arr[2];
+              //   //    unset($val_arr);
+              //   //  }
+               }
+
+               // one week (current week)
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
                   $book = new Booking();
                   // $mutable = $date_calculate_roster_copy->isMutable();
                   $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
+
+
                   // $book->description = "description123:";
                   $book->start = $date_calculate_roster_copy;
                   $bgClr = '#f39c12';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   // $book->description = "description test";
-                  $book->description = "";
+                  $book->description = $coaches_list;
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
                }
@@ -368,7 +403,8 @@ function assignedCoaches() {
                   $book = new Booking();
                   // $mutable = $date_calculate_roster_copy->isMutable();
                   // $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
-                  $book->title = $course_name;
+                  // $book->title = $course_name;
+                  $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
 
                   $separator = "";
                   $description = "";
@@ -383,8 +419,8 @@ function assignedCoaches() {
                   $book->description = $description;
                   // $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
                   $book->start = $date_calculate_roster_copy;
-                  // $bgClr = '#f39c12';
-                  $bgClr = 'green';
+                  $bgClr = '#f39c12';
+                  // $bgClr = 'green';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   // $book->color = 'blue';
@@ -394,7 +430,6 @@ function assignedCoaches() {
                   $book->ev_id_class = $id_class_value;
                   $book->hc = "Head coach: " . $hc_first_name . " " . $hc_last_name;
                   // $book->id = "klk";
-                    // $department = 'BioChemistry'
 
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
