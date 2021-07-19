@@ -230,11 +230,12 @@ function rosterView() {
 
   // Assigned coaches
   // $sql_coaches = "SELECT * FROM history_availability WHERE shift_date BETWEEN '$start' and '$end'";
-  $sql_coaches = "SELECT h.id_class, h.id_user, u.first_name, u.last_name  FROM history_availability as h join users as u
-  on h.id_user=u.id_user WHERE shift_date BETWEEN '$start' and '$end'";
+
+  // $sql_coaches = "SELECT h.id_class, h.id_user, u.first_name, u.last_name  FROM history_availability as h join users as u
+  // on h.id_user=u.id_user WHERE shift_date BETWEEN '$start' and '$end'";
 
   $sql_coaches = "SELECT h.id_class,
-  GROUP_CONCAT(u.first_name, ' ', u.last_name SEPARATOR '; ') AS coahes
+  GROUP_CONCAT(u.first_name, ' ', u.last_name SEPARATOR '; ') AS coaches
   FROM history_availability as h join users as u on h.id_user=u.id_user
   WHERE shift_date BETWEEN '$start' and '$end' group by h.id_class";
 
@@ -242,7 +243,7 @@ function rosterView() {
   while($row = dbFetchAssoc($result_coaches)) {
     	extract($row);
       // Array of coaches with class and shift dates
-      $assigned_coaches[] =  array($id_class, $coahes);
+      $assigned_coaches[] =  array($id_class, $coaches);
   }
 
   // Classes of courses
