@@ -19,7 +19,7 @@ if (isset($_SESSION['email'])) { ?>
             }
 
             .form-control {
-                color: #212529;
+                color: #737373;
                 background-color: #121212;
                 border: 1px solid #b8b8b8;
             }
@@ -29,7 +29,9 @@ if (isset($_SESSION['email'])) { ?>
     <body>
         <?php
 
-        if ($_SESSION['role'] == '1') { ?>
+        if ($_SESSION['role'] == '1') { 
+
+            ?>
             <div class="d-flex user-bg" id="wrapper">
                 <!-- Sidebar -->
                 <?php $page = 'my-profile';
@@ -67,53 +69,48 @@ if (isset($_SESSION['email'])) { ?>
                                         </div>
                                         <!-- Form Start-->
 
-                                                <form action="">
-
-                                                                   
-
-                                                               
-
-
-                                                        
+                                                <form action="" method="POST" enctype="multipart/form-data">    
                                                     <div class="row px-5 py-1">
 
                                                         <div class="col-md-6 form-group">
                                                             <label for="fname">First Name</label>
-                                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="" >
+                                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="" value="<?php echo $_SESSION['fname'];?>" >
                                                         </div>
 
                                                         <div class="col-md-6 form-group">
                                                             <label for="lname">Last Name</label>
-                                                            <input type="text" class="form-control" id="lname" name="lname" >
+                                                            <input type="text" class="form-control" id="lname" name="lname" value="<?php echo $_SESSION['lname'];?>" >
                                                         </div>
 
                                                         <div class="col-md-6 form-group pt-3">
                                                             <label for="email">E-mail</label>
-                                                            <input type="email" class="form-control" id="email" name="email">
+                                                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION['email'];?>">
                                                         </div>
 
                                                         <div class="col-md-6 form-group pt-3">
                                                             <label for="phone">Contact Number</label>
-                                                            <input type="phone" class="form-control" id="phone" name="phone">
+                                                            <input type="phone" class="form-control" id="phone" name="phone" value="<?php echo $_SESSION['phone'];?>" >
                                                         </div>
 
                                                         <div class="col-md-12 form-group pt-3">
                                                             <label for="address">Address</label>
-                                                            <input type="address" class="form-control" id="address" name="address">
+                                                            <input type="address" class="form-control" id="address" name="address" value="<?php echo $_SESSION['address'];?>">
                                                         </div>
 
                                                         <div class="col-md-12">
                                                             <div class="d-flex justify-content-end py-3">
-                                                                <button type="button" class="btn py-3 w-100"> Update Profile </button>
+                                                                <button type="submit" name="update" class="btn py-3 w-100"> Update Profile </button>
                                                             </div>
                                                         </div>
 
                                                     </div>
-
+                      
 
                                                 </form>
                                        
-
+                                                
+                                               
+ 
 
                                         <!-- Form End -->
                                     </div>
