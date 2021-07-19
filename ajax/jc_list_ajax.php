@@ -23,7 +23,7 @@ if($_POST['id_class'])
                    <p></p>
                    <p id='hc'></p>
                  </h4>
-                 <button type='button' class='close' data-dismiss='modal' (click) = 'hide()'>&times;</button>
+                 <!-- <button type='button' class='close' data-dismiss='modal' (click) = 'hide()'>&times;</button> -->
                </div>
 
                <!-- Modal body -->

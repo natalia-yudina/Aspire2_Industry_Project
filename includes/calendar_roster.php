@@ -183,7 +183,8 @@ var event_id;
               success: function(response) {
                   // Show The Modal Form
                   $('.modal-dialog').html(response);
-                  $("#successModal .modal-title p").text(event.title);
+                  // $("#successModal .modal-title p").text(event.title);
+                  $("#successModal .modal-title p").text(event.title.replace(event.hc, ''));
                   $("#successModal .modal-title #hc").text(event.hc);
                   $('#id_event_text').val(event._id);
                   $('#successModal').modal('show');
@@ -223,7 +224,7 @@ var event_id;
     event_to_update.jc_list =[];
     event_to_update.jc_list = [selected_jc1_id, selected_jc2_id, selected_jc3_id, selected_jc4_id];
 
-    event_to_update.description = "Jr.Coach List: \n " + selected_jc1_string + ",\n" + selected_jc2_string + ",\n" + selected_jc3_string + ",\n" + selected_jc4_string;
+    event_to_update.description = "Jr. Coaches List: \n " + selected_jc1_string + ",\n" + selected_jc2_string + ",\n" + selected_jc3_string + ",\n" + selected_jc4_string;
     $('#calendar').fullCalendar('updateEvent', event_to_update);
 
   });
