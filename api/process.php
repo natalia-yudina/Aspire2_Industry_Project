@@ -268,7 +268,8 @@ function rosterView() {
                   $bgClr = '#f39c12';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
-                  $book->description = "description test";
+                  // $book->description = "description test";
+                  $book->description = "";
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
                }
@@ -369,7 +370,18 @@ function assignedCoaches() {
                   // $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
                   $book->title = $course_name;
 
-                  $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
+                  $separator = "";
+                  $description = "";
+                  $description_start = "Jr. Coaches List: ";
+                  foreach($av_users as $jcoach => $jc_value){
+
+                    $description = $description_start . $description . $separator . $jc_value;
+                    $separator = ", ";
+                    $description_start = "";
+
+                  }
+                  $book->description = $description;
+                  // $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
                   $book->start = $date_calculate_roster_copy;
                   // $bgClr = '#f39c12';
                   $bgClr = 'green';
