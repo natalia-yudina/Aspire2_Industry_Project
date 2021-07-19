@@ -53,7 +53,7 @@ $(document).ready(function() {
  				},
  				type	: 'POST',
         success: function(response) {
-          console.log(response.resultOK);
+          // console.log(response.resultOK);
 
         Swal.fire(
             'Congratulations!',
