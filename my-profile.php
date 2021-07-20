@@ -29,7 +29,7 @@ if (isset($_SESSION['email'])) { ?>
     <body>
         <?php
 
-        if ($_SESSION['role'] == '1') { 
+        if ($_SESSION['role'] == '1') {
 
             ?>
             <div class="d-flex user-bg" id="wrapper">
@@ -47,15 +47,15 @@ if (isset($_SESSION['email'])) { ?>
                             <div class="col-md-6 py-3 px-3">
                                 <div class="d-flex px-4 user-info py-4">
                                     <div class="d-flex flex-column user-text">
-                                        <div class="fw-bold pb-2">
+                                        <div id = "lb_fullname" class="fw-bold pb-2">
                                             <i class="fas fa-circle fs-6 p-2" style="color:#feca11;;"></i>
                                             <?= $_SESSION['fname'] ?>
                                             <?= $_SESSION['lname'] ?>
                                         </div>
-                                        <div><i class="fas fa-envelope fs-6 p-2"></i><?= $_SESSION['email'] ?></div>
-                                        <div><i class="fas fa-mobile-alt  fs-6 p-2"></i> <?= $_SESSION['phone'] ?> </div>
+                                        <div id = "lb_email"><i class="fas fa-envelope fs-6 p-2"></i><?= $_SESSION['email'] ?></div>
+                                        <div id = "lb_phone"><i class="fas fa-mobile-alt  fs-6 p-2"></i> <?= $_SESSION['phone'] ?> </div>
 
-                                        <div><i class="fas fa-map-marker-alt  fs-6 p-2"></i><?= $_SESSION['address'] ?></div>
+                                        <div id = "lb_address"><i class="fas fa-map-marker-alt  fs-6 p-2"></i><?= $_SESSION['address'] ?></div>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,8 @@ if (isset($_SESSION['email'])) { ?>
                                         </div>
                                         <!-- Form Start-->
 
-                                                <form action="" method="POST" enctype="multipart/form-data">    
+                                                <!-- <form action="" method="POST" enctype="multipart/form-data">     -->
+                                                <form>
                                                     <div class="row px-5 py-1">
 
                                                         <div class="col-md-6 form-group">
@@ -99,20 +100,16 @@ if (isset($_SESSION['email'])) { ?>
 
                                                         <div class="col-md-12">
                                                             <div class="d-flex justify-content-end py-3">
-                                                                <button type="submit" name="update" class="btn py-3 w-100"> Update Profile </button>
+                                                                <!-- <button type="submit" name="update" class="btn py-3 w-100"> Update Profile </button> -->                                                                
                                                             </div>
                                                         </div>
 
                                                     </div>
-                      
+
 
                                                 </form>
-                                       
-                                                
-                                               
- 
-
                                         <!-- Form End -->
+                                        <button class="saveProfile btn py-3 w-100" data-id="<?php echo $_SESSION['id'];?>">Update Profile</button>
                                     </div>
                                 </div>
                             </div>
@@ -136,3 +133,5 @@ if (isset($_SESSION['email'])) { ?>
 <?php } else {
     header("location: signin.php");
 } ?>
+
+ <script src="js/edit_profile.js"></script>
