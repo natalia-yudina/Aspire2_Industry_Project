@@ -2,13 +2,14 @@
 
 
 <?php
-
+	session_start();
   require_once '../config.php';
 
+$id_user = $_SESSION['id'];
 $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.start_time, class.end_time, availability.id_user, availability.close_date FROM class
   			   INNER JOIN course ON class.id_course=course.id_course
                  left join availability ON
-                 class.id_class=availability.id_class";
+                 class.id_class=availability.id_class and availability.id_user ='$id_user'";
 
 ?>
 
