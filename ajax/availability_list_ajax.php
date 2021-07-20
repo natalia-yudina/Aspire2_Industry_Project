@@ -46,11 +46,17 @@ $mainSQL	= "SELECT class.id_class, class.weekday, course.course_name, class.star
             } else {
             echo "<td><input type='checkbox' class='w-100 checkitem' name='check[".$row['id_class']."]' value=".$row['id_class']."></td>";
             }
+						$time_start = date('H:i', strtotime($row['start_time']));
+						$time_end = date('H:i', strtotime($row['end_time']));
 			      echo "<td>" . $row['id_class'] . "</td>";
             echo "<td id='recordMake_".$row['id_class']."'>" . $row['weekday'] . "</td>";
             echo "<td id='recordYear_".$row['id_class']."'>" . $row['course_name'] . "</td>";
-            echo "<td id='recordPlate_number_".$row['id_class']."'>" . $row['start_time'] . "</td>";
-            echo "<td id='recordAvailable_".$row['id_class']."'>" . $row['end_time'] . "</td>";
+
+            // echo "<td id='recordPlate_number_".$row['id_class']."'>" . $row['start_time'] . "</td>";
+            // echo "<td id='recordAvailable_".$row['id_class']."'>" . $row['end_time'] . "</td>";
+
+						echo "<td id='recordPlate_number_".$row['id_class']."'>" . $time_start . "</td>";
+            echo "<td id='recordAvailable_".$row['id_class']."'>" . $time_end . "</td>";						
 		echo "</tr>";
         }
 ?>
