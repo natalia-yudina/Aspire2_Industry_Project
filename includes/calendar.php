@@ -104,6 +104,9 @@ $(function () {
 		},
     displayEventEnd: true,
     selectable: true,
+    allDaySlot: false,
+    minTime: "08:00:00",
+    maxTime: "22:00:00",    
     weekNumbers: true,
     navLinks: true, // can click day/week names to navigate views
 		eventAfterRender : function(ev, element, view) {
