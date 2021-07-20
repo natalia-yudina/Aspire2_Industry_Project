@@ -313,9 +313,12 @@ function rosterView() {
                // one week (current week)
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
+                 $datetime1 = new DateTime($shift_date);
+                 $datetime2 = new DateTime($date_calculate_roster_copy->format('Y-m-d'));
+                 // $datetime1 = strtotime($shift_date);
+                 // $datetime2 = strtotime($date_calculate_roster_copy->format('Y-m-d'));
 
-                 // if ($_SESSION['role'] !== '2' and $date_calculate_roster_copy->format('Y-m-d') == $shift_date) {
-                 //   // code...
+                 if (($_SESSION['role'] !== '1') or ($_SESSION['role'] !== '2' and ($datetime1 == $datetime2))) {
 
                   $book = new Booking();
                   $book->title = $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
@@ -326,9 +329,10 @@ function rosterView() {
                   $book->borderColor = $bgClr;
                   $book->description = $coaches_list;
                   $bookings[] = $book;
+                }
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
-                  // $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
-                  // }
+                  $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
+
                }
            }
 
@@ -451,6 +455,7 @@ function assignedCoaches() {
 
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
+                  $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
                }
            }
 
