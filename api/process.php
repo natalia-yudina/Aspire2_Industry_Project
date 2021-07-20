@@ -5,6 +5,7 @@
 
 
 <?php
+	session_start();
  // NI 24-06-2021 begin
  require '../vendor/autoload.php';
  use Carbon\Carbon;
@@ -224,6 +225,8 @@ function rosterView() {
 
 	$start = $_POST['start'];
 	$end   = $_POST['end'];
+  $current_id_user = $_SESSION['id'];
+  $current_id_role = $_SESSION['role'];
 
 	$bookings = array();
   // Courses in the current period
@@ -254,11 +257,24 @@ function rosterView() {
   }
 
   // Classes of courses
+
   $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
   u.first_name as hc_first_name, u.last_name as hc_last_name
   			   FROM course c JOIN class cl ON c.id_course = cl.id_course JOIN users u ON u.id_user = cl.id_user
   			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start')";
-  $result2 = dbQuery($sql2);
+
+  $sql2jc =  "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
+             u.first_name as hc_first_name, u.last_name as hc_last_name, h.shift_date
+             			   FROM course c JOIN class cl ON c.id_course = cl.id_course JOIN users u ON u.id_user = cl.id_user
+                          JOIN history_availability h ON h.id_class = cl.id_class
+             			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start') and h.id_user = '$current_id_user'";
+  if ($_SESSION['role'] == '2') {
+    $result2 = dbQuery($sql2);
+  }
+  else {
+    $result2 = dbQuery($sql2jc);
+  };
+
            while($row = dbFetchAssoc($result2)) {
              // take class
              extract($row);
@@ -297,6 +313,10 @@ function rosterView() {
                // one week (current week)
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
+
+                 // if ($_SESSION['role'] !== '2' and $date_calculate_roster_copy->format('Y-m-d') == $shift_date) {
+                 //   // code...
+
                   $book = new Booking();
                   $book->title = $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
                   $book->start = $date_calculate_roster_copy;
@@ -308,6 +328,7 @@ function rosterView() {
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
                   // $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
+                  // }
                }
            }
 
