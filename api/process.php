@@ -100,8 +100,9 @@ function addCourse() {
   $course_name  = $_POST['cname'];
   $start_date   = $_POST['sdate'];
   $end_date     = $_POST['edate'];
+  $color_code     = $_POST['colorPicker'];
 
-  $sql = "INSERT INTO course (course_name, start_date, end_date) VALUES ('$course_name', '$start_date', '$end_date')";
+  $sql = "INSERT INTO course (course_name, start_date, end_date, color_code) VALUES ('$course_name', '$start_date', '$end_date', '$color_code')";
   dbQuery($sql);
   header('Location: ../add-course.php');
   exit();
@@ -164,7 +165,7 @@ function calendarView() {
         $active_courses[] =  array($id_course, $start_calculate, $end_calculate);
     }
 
-  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time
+  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, c.color_code, cl.start_time, cl.end_time
   			   FROM course c JOIN class cl ON c.id_course = cl.id_course
   			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start')";
   $result2 = dbQuery($sql2);
@@ -205,8 +206,12 @@ function calendarView() {
                   $book->title = $course_name;
                   $book->start = $date_calculate_roster_copy;
                   $book->end  = $date_calculate_roster_copy_end;
-                  $bgClr = '#f39c12';
-                  $book->backgroundColor = $bgClr;
+									if ($color_code !== null) {
+										$bgClr = $color_code;
+									} else {
+										$bgClr = '#f39c12';
+									}
+									$book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
@@ -258,12 +263,12 @@ function rosterView() {
 
   // Classes of courses
 
-  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
+  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, c.color_code, cl.start_time, cl.end_time,
   u.first_name as hc_first_name, u.last_name as hc_last_name
   			   FROM course c JOIN class cl ON c.id_course = cl.id_course JOIN users u ON u.id_user = cl.id_user
   			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start')";
 
-  $sql2jc =  "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
+  $sql2jc =  "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, c.color_code, cl.start_time, cl.end_time,
              u.first_name as hc_first_name, u.last_name as hc_last_name, h.shift_date
              			   FROM course c JOIN class cl ON c.id_course = cl.id_course JOIN users u ON u.id_user = cl.id_user
                           JOIN history_availability h ON h.id_class = cl.id_class
@@ -324,7 +329,11 @@ function rosterView() {
                   $book->title = $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
                   $book->start = $date_calculate_roster_copy;
                   $book->end   = $date_calculate_roster_copy_end;
-                  $bgClr = '#f39c12';
+									if ($color_code !== null) {
+										$bgClr = $color_code;
+									} else {
+										$bgClr = '#f39c12';
+									}
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   $book->description = $coaches_list;
@@ -375,7 +384,7 @@ function assignedCoaches() {
   }
 
   // Classes of courses
-  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, cl.start_time, cl.end_time,
+  $sql2 = "SELECT cl.weekday, cl.id_class, c.id_course as course_from_class, c.course_name, c.color_code, cl.start_time, cl.end_time,
   u.first_name as hc_first_name, u.last_name as hc_last_name
   			   FROM course c JOIN class cl ON c.id_course = cl.id_course JOIN users u ON u.id_user = cl.id_user
   			   WHERE (c.start_date <= '$end' AND c.end_date >= '$start')";
@@ -444,8 +453,12 @@ function assignedCoaches() {
                   $book->description = $description;
                   $book->start = $date_calculate_roster_copy;
                   $book->end = $date_calculate_roster_copy_end;
-                  $bgClr = '#f39c12';
-                  // $bgClr = 'green';
+
+									if ($color_code !== null) {
+										$bgClr = $color_code;
+									} else {
+										$bgClr = '#f39c12';
+									}
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   // $book->color = 'blue';

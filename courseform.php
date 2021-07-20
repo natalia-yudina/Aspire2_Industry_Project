@@ -22,7 +22,7 @@
 
     <div class="form-group pt-3 pb-2">
     <label for="colorpicker">Select Course Color</label>
-      <span class="d-flex "><input class="colorPicker" type='color' id='colorPicker' value="#FFC817"></span>
+      <span class="d-flex form-control"><input class="colorPicker" type='color' id='colorPicker' name="colorPicker" value="#FFC817"></span>
     </div>
     <div class="col-md-12">
 		<button type="submit" class="btn add_new_course w-100 my-4 py-3"> Add Course<i class="fas fa-plus px-2 "></i> </button>
