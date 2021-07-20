@@ -10,6 +10,7 @@ class Booking {
 
 	public $title;
 	public $start;
+	public $end;	
 	public $allDay = false;
 	public $backgroundColor;
 	public $borderColor;
@@ -17,7 +18,7 @@ class Booking {
 	public $className;
 	public $block = false;
 	public $description;
-	
+
 	public $jc_list;
 	public $ev_id_class;
 	public $hc;

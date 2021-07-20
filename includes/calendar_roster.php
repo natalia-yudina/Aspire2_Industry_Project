@@ -87,7 +87,7 @@ var event_id;
     // like '7p', for all other views
     // timeFormat: 'H(:mm)t',
     // like '5:00', for agendaWeek and agendaDay
-		timeFormat: 'h:mm',
+    timeFormat: 'H:mm',
 		header: {
       left: 'prev,next today',
       center: 'title',
@@ -121,6 +121,7 @@ var event_id;
 
 		},
 
+    displayEventEnd: true,
     selectable: true,
     // defaultView: 'basicWeek',
     defaultView: 'agendaWeek',
@@ -155,6 +156,7 @@ var event_id;
 		},
     eventClick: function(event) {
 
+      console.log(event);
       // $("#successModal .modal-title p").text(event.title);
       // $("#successModal .modal-title #hc").text(event.hc);
       // $("#successModal .modal-body p").text(event.description);

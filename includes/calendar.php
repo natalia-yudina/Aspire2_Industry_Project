@@ -74,6 +74,7 @@ color: #637373;
 $(function () {
 	$('#calendar').fullCalendar({
 		//timeFormat: 'H(:mm)t',
+    timeFormat: 'H:mm',
 		header: {
         	left: 'prev,next today',
             center: 'title',
@@ -101,6 +102,7 @@ $(function () {
 				}
 			});
 		},
+    displayEventEnd: true,
     selectable: true,
     weekNumbers: true,
     navLinks: true, // can click day/week names to navigate views

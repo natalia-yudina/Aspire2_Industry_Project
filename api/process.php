@@ -179,6 +179,7 @@ function calendarView() {
                 }
               }
 
+              // event start time
               $reffulldate = $start_class . ' ' . $start_time;
               $timestamp = strtotime($reffulldate);
 
@@ -187,17 +188,28 @@ function calendarView() {
               $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
               $date_calculate_roster_copy = $date_calculate_roster_new->toImmutable();
 
+              // event end time
+              $reffulldate_end = $start_class . ' ' . $end_time;
+              $timestamp_end = strtotime($reffulldate_end);
+
+              $date_calculate_roster_end = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp_end), $timestamp_end));
+
+              $date_calculate_roster_new_end = Carbon::createFromDate($date_calculate_roster_end, 'UTC');
+              $date_calculate_roster_copy_end = $date_calculate_roster_new_end->toImmutable();
+
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
                   $book = new Booking();
                   // $mutable = $date_calculate_roster_copy->isMutable();
-                  $book->title = $date_calculate_roster1 . $course_name;
+                  $book->title = $course_name;
                   $book->start = $date_calculate_roster_copy;
+                  $book->end  = $date_calculate_roster_copy_end;
                   $bgClr = '#f39c12';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
+                  $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
 
                }
 
@@ -229,15 +241,10 @@ function rosterView() {
   }
 
   // Assigned coaches
-  // $sql_coaches = "SELECT * FROM history_availability WHERE shift_date BETWEEN '$start' and '$end'";
-
-  // $sql_coaches = "SELECT h.id_class, h.id_user, u.first_name, u.last_name  FROM history_availability as h join users as u
-  // on h.id_user=u.id_user WHERE shift_date BETWEEN '$start' and '$end'";
-
   $sql_coaches = "SELECT h.id_class,
-  GROUP_CONCAT(u.first_name, ' ', u.last_name SEPARATOR '; ') AS coaches
-  FROM history_availability as h join users as u on h.id_user=u.id_user
-  WHERE shift_date BETWEEN '$start' and '$end' group by h.id_class";
+    GROUP_CONCAT(u.first_name, ' ', u.last_name SEPARATOR '; ') AS coaches
+    FROM history_availability as h join users as u on h.id_user=u.id_user
+    WHERE shift_date BETWEEN '$start' and '$end' group by h.id_class";
 
   $result_coaches = dbQuery($sql_coaches);
   while($row = dbFetchAssoc($result_coaches)) {
@@ -264,50 +271,43 @@ function rosterView() {
                   unset($val_arr);
                 }
               }
-                $reffulldate = $start_class . ' ' . $start_time;
-                $timestamp = strtotime($reffulldate);
 
-                $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
-
-               $mycounter = 0;
-                $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
+              // event start time
+              $reffulldate = $start_class . ' ' . $start_time;
+              $timestamp = strtotime($reffulldate);
+              $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
+              $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
               $date_calculate_roster_copy = $date_calculate_roster_new->toImmutable();
 
-              // $date_calculate_roster = (new Carbon('first ' . $weekday . $start_time, 'UTC'));
-              //   $date_calculate_roster_copy = $date_calculate_roster->copy();
+              // event end time
+              $reffulldate_end = $start_class . ' ' . $end_time;
+              $timestamp_end = strtotime($reffulldate_end);
+              $date_calculate_roster_end = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp_end), $timestamp_end));
+              $date_calculate_roster_new_end = Carbon::createFromDate($date_calculate_roster_end, 'UTC');
+              $date_calculate_roster_copy_end = $date_calculate_roster_new_end->toImmutable();
 
+              // coaches list
               $coaches_list = "";
               foreach($assigned_coaches as $val_coaches => $massiv) {
                 if ($massiv[0] == $id_class) {
-
                   $coaches_list = "Jr. Coaches List: " . $massiv[1];
                 }
-              //
-              //   // $index = array_search($course_from_class,$val_arr,true);
-              //   //  if ($index !== false) {
-              //   //    $start_class = $val_arr[1];
-              //   //    $end_class = $val_arr[2];
-              //   //    unset($val_arr);
-              //   //  }
                }
 
                // one week (current week)
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
                   $book = new Booking();
-                  // $mutable = $date_calculate_roster_copy->isMutable();
-                  $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
-
-
-                  // $book->description = "description123:";
+                  $book->title = $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
                   $book->start = $date_calculate_roster_copy;
+                  $book->end   = $date_calculate_roster_copy_end;
                   $bgClr = '#f39c12';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
-                  // $book->description = "description test";
                   $book->description = $coaches_list;
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
+                  // $date_calculate_roster_copy_end = $date_calculate_roster_copy_end->copy()->addWeek();
                }
            }
 
@@ -367,17 +367,19 @@ function assignedCoaches() {
                   unset($val_arr);
                 }
               }
-                $reffulldate = $start_class . ' ' . $start_time;
-                $timestamp = strtotime($reffulldate);
-
-                $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
-
-               $mycounter = 0;
-                $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
+              // event start time
+              $reffulldate = $start_class . ' ' . $start_time;
+              $timestamp = strtotime($reffulldate);
+              $date_calculate_roster = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp), $timestamp));
+              $date_calculate_roster_new = Carbon::createFromDate($date_calculate_roster, 'UTC');
               $date_calculate_roster_copy = $date_calculate_roster_new->toImmutable();
 
-              // $date_calculate_roster = (new Carbon('first ' . $weekday . $start_time, 'UTC'));
-              //   $date_calculate_roster_copy = $date_calculate_roster->copy();
+              // event end time
+              $reffulldate_end = $start_class . ' ' . $end_time;
+              $timestamp_end = strtotime($reffulldate_end);
+              $date_calculate_roster_end = date('Y-m-d H:i:s', strtotime('next ' . $weekday . ' ' . date('H:i:s', $timestamp_end), $timestamp_end));
+              $date_calculate_roster_new_end = Carbon::createFromDate($date_calculate_roster_end, 'UTC');
+              $date_calculate_roster_copy_end = $date_calculate_roster_new_end->toImmutable();
 
               // NI 14-07-2021 begin
               // Available coaches
@@ -402,10 +404,7 @@ function assignedCoaches() {
                while($date_calculate_roster_copy->format('Y-m-d') <= $end_class)
                {
                   $book = new Booking();
-                  // $mutable = $date_calculate_roster_copy->isMutable();
-                  // $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
-                  // $book->title = $course_name;
-                  $book->title = $date_calculate_roster1 . $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
+                  $book->title = $course_name . "\n\nHead coach: " . $hc_first_name . " " . $hc_last_name;
 
                   $separator = "";
                   $description = "";
@@ -418,19 +417,16 @@ function assignedCoaches() {
 
                   }
                   $book->description = $description;
-                  // $book->description = "Jr.Coach List: \n " . $av_users[0] . ",\n" . $av_users[1] . ",\n" . $av_users[2] . ",\n" . $av_users[3];
                   $book->start = $date_calculate_roster_copy;
+                  $book->end = $date_calculate_roster_copy_end;
                   $bgClr = '#f39c12';
                   // $bgClr = 'green';
                   $book->backgroundColor = $bgClr;
                   $book->borderColor = $bgClr;
                   // $book->color = 'blue';
-                  // $book->end = $end_calculate;
-                  // $book->extendedProps = "kk";
                   $book->jc_list = $assigned_coaches;
                   $book->ev_id_class = $id_class_value;
                   $book->hc = "Head coach: " . $hc_first_name . " " . $hc_last_name;
-                  // $book->id = "klk";
 
                   $bookings[] = $book;
                   $date_calculate_roster_copy = $date_calculate_roster_copy->copy()->addWeek();
