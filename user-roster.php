@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if (isset($_SESSION['email']))
@@ -21,18 +21,20 @@ if (isset($_SESSION['email']))
   height: 1em;
   line-height: 1em;
   font-size: 1.1em;
-  color: #ffda63; 
+  color: #ffda63;
 }
         </style>
 </head>
 
 <body>
-<?php  
-  if ($_SESSION['role'] == '1') { ?>
+<?php
+  if ($_SESSION['role'] == '1') {
+  ?>
+
     <div class="d-flex user-bg" id="wrapper">
         <!-- Sidebar -->
         <?php $page = 'user-roster'; include('includes/user-sidebar.php'); ?>
-        <!-- Sidebar END -->    
+        <!-- Sidebar END -->
         <div id="page-content-wrapper">
             <!-- Top Navbar -->
             <?php include('includes/user-nav.php'); ?>
@@ -41,8 +43,11 @@ if (isset($_SESSION['email']))
             <div class="container-fluid">
                 <div class="row d-flex g-3 my-2 content-bg justify-content-center">
                     <div class="col-md-12 p-3">
-                    <?php include('includes/calendar.php') ?>
-                    </div> 
+                    <?php
+                    // include('includes/calendar.php')
+                    ?>
+                    <?php include('includes/calendar_roster.php') ?>
+                    </div>
                 </div>
             </div>
               <!-- Content END -->
@@ -50,16 +55,18 @@ if (isset($_SESSION['email']))
     </div>
 
     <!-- Sidebar JS -->
-    <script type = "text/javascript" src="js/sidebar.js"></script>  
+    <script type = "text/javascript" src="js/sidebar.js"></script>
     <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     <?php } ?>
 </body>
 
 </html>
 
-<?php } else {
+<?php
+} else {
   header("location: signin.php");
-} ?>
+}
+?>
