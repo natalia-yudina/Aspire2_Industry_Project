@@ -98,18 +98,19 @@ if (isset($_SESSION['email'])) { ?>
                                                             <input type="address" class="form-control" id="address" name="address" value="<?php echo $_SESSION['address'];?>">
                                                         </div>
 
-                                                        <div class="col-md-12">
-                                                            <div class="d-flex justify-content-end py-3">
-                                                                <!-- <button type="submit" name="update" class="btn py-3 w-100"> Update Profile </button> -->                                                                
-                                                            </div>
-                                                        </div>
+                                                        
 
                                                     </div>
 
 
                                                 </form>
                                         <!-- Form End -->
-                                        <button class="saveProfile btn py-3 w-100" data-id="<?php echo $_SESSION['id'];?>">Update Profile</button>
+                                        <div class="col-md-12">
+                                                            <div class="d-flex justify-content-center py-3">
+                                                                <button class="saveProfile btn py-3 w-50" data-id="<?php echo $_SESSION['id'];?>">Update Profile</button>
+                                                            </div>
+                                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
