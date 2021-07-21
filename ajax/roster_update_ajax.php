@@ -37,29 +37,30 @@
     // send email begin
 
     // get email of jr. coaches
-    $sql = "SELECT * FROM history_availability h JOIN users u on h.id_user=u.id_user WHERE h.shift_date IN ($date_list)";
-  //   // //dbQuery - function in database.php
-  //   // dbQuery($sql);
-  //
+    $sql_emails = "SELECT u.email, u.first_name, u.last_name FROM history_availability h JOIN users u on h.id_user=u.id_user
+    WHERE h.shift_date IN ($date_list) GROUP BY u.email";
+    //dbQuery - function in database.php
+    $email_list_result = dbQuery($sql_emails);
+
     $email_sender = "nyudina.nz@gmail.com";
     $email_receiver = "nyudina.nz@gmail.com";
     $email_subject = "You are assigned to a job";
     $email_message = "Please check your shifts in the app";
 
-  //
-  //   $BodyMessage = '
-  //     <html>
-  //         <head>
-  //             <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
-  //             <title>Title</title>
-  //         </head>
-  //         <body>
-  //             <p>' . $email_message . '</p>
-  //
-  //         </body>
-  //     </html>
-  //     ';
-  //
+
+    // $BodyMessage = '
+    //   <html>
+    //       <head>
+    //           <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+    //           <title>Title</title>
+    //       </head>
+    //       <body>
+    //           <p>' . $email_message . '</p>
+    //
+    //       </body>
+    //   </html>
+    //   ';
+
 
   // ===========
   //Import PHPMailer classes into the global namespace
@@ -87,8 +88,12 @@
 
       //Recipients
       $mail->setFrom($email_sender, 'MBSC Roster Admin');
-      $mail->addAddress($email_receiver, 'Joe User');     //Add a recipient
-      // $mail->addAddress('ellen@example.com');               //Name is optional
+      $mail->addAddress($email_receiver, 'Joe User');     //Add a recipient //Name is optional
+
+      while($row = dbFetchAssoc($email_list_result)) {
+    		extract($row);
+        $mail->addAddress($email, $first_name . " " . $last_name);
+      }
 
       //Content
       $mail->isHTML(true);                                  //Set email format to HTML
