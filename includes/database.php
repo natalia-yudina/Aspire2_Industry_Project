@@ -73,7 +73,7 @@ function getClassesRecords() {
 	$per_page = 10;
 	$page 	= (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
 	$start 	= ($page-1)*$per_page;
-	$sql 	= "SELECT class.id_class, course.course_name, class.start_time, class.end_time, class.weekday, users.last_name
+	$sql 	= "SELECT class.id_class, course.course_name, class.start_time, class.end_time, class.weekday, users.last_name, users.first_name
 	FROM class
 	INNER JOIN course
 	ON class.id_course=course.id_course
@@ -85,7 +85,7 @@ function getClassesRecords() {
 	$records = array();
 	while($row = dbFetchAssoc($result)) {
 		extract($row);
-		$records[] = array("cid" => $id_class, "ccoach" => $last_name, "courid" => $course_name,
+		$records[] = array("cid" => $id_class, "ccoach" => $first_name . " " . $last_name, "courid" => $course_name,
 		"cday" => $weekday, "cstart" => $start_time, "cend" => $end_time);
 	}//while
 	return $records;
