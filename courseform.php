@@ -6,17 +6,17 @@
   <form action="<?php echo WEB_ROOT; ?>api/process.php?cmd=course" class="py-2" method="post">
     <div class="col-md-12 form-group pt-1">
       <label for="fname">Course Name</label>
-      <input type="text" class="form-control" id="cname" placeholder="Enter Course Name" name="cname">
+      <input type="text" class="form-control" id="cname" placeholder="Enter Course Name" name="cname" required>
     </div>
 
     <div class="row">
     <div class="col-md-6 form-group pt-3">
       <label for="sdate">Start Date</label>
-      <input type="date" class="form-control" id="sdate"  name="sdate">
+      <input type="date" class="form-control" id="sdate"  name="sdate" required>
     </div>
     <div class="col-md-6 form-group pt-3">
       <label for="edate">End Date</label>
-      <input type="date" class="form-control" id="edate" name="edate">
+      <input type="date" class="form-control" id="edate" name="edate" required>
     </div>
     </div>
 

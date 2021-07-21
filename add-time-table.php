@@ -44,7 +44,7 @@ if (isset($_SESSION['email']))
 <!-- NI 03-06-2021 end -->
 <div class="col-md-12 form-group py-2">
     <label for="hcname">Who is Head Coach?</label>
-    <select class="form-control form-select" id="hcname">
+    <select class="form-control form-select" id="hcname" required>
       <!-- NI 03-06-2021 begin -->
 			<!-- <option>Jane Doe</option>
       <option>Jhone Doe</option> -->
@@ -65,7 +65,7 @@ if (isset($_SESSION['email']))
   </div>
   <div class="col-md-12 form-group pt-3">
     <label for="cname">Choose the Course</label>
-    <select class="form-control form-select" id="cname">
+    <select class="form-control form-select" id="cname" required>
       <!-- NI 03-06-2021 begin -->
             <!-- <option>Blue Fleet</option>
             <option>Green Fleet</option> -->
@@ -86,7 +86,7 @@ if (isset($_SESSION['email']))
   </div>
   <div class="col-md-12 form-group pt-3">
     <label for="day">Choose a Day</label>
-    <select class="form-select" id="day">
+    <select class="form-select" id="day" required>
       <option>Monday</option>
       <option>Tuesday</option>
       <option>Wednesday</option>
@@ -100,11 +100,11 @@ if (isset($_SESSION['email']))
   <div class="row pb-2">
   <div class="col-sm-6 form-group pt-3">
       <label for="stime">Start</label>
-      <input type="time" class="form-control" id="stime" name="stime">
+      <input type="time" class="form-control" id="stime" name="stime" required>
     </div>
     <div class="col-sm-6 form-group pt-3">
       <label for="etime">End</label>
-      <input type="time" class="form-control" id="etime" name="etime">
+      <input type="time" class="form-control" id="etime" name="etime" required>
     </div>
     </div>
 

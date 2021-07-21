@@ -11,7 +11,7 @@
   <div class="form-group">
   <label for="hdate">Holiday Date</label>  
 		<span id="sprytf_date">
-          <input type="text" class="form-control input-sm" name="date" placeholder="yyyy-mm-dd">
+          <input type="text" class="form-control input-sm" name="date" placeholder="yyyy-mm-dd" required>
 		  <!-- <span class="textfieldRequiredMsg">Date is required.</span> -->
 		</span>
         </div>
@@ -20,7 +20,7 @@
       <div class="form-group pt-3 pb-2">
       <label for="hdate">Holiday Reason</label>    
 		<span id="sprytf_reason">
-          <input type="text" class="form-control input-sm" name="reason" placeholder="Holiday reason" req>
+          <input type="text" class="form-control input-sm" name="reason" placeholder="Holiday reason" required>
 		  <!-- <span class="textfieldMinCharsMsg">Reason must specify at least 8 characters.</span> -->
 		</span>    
       </div>
