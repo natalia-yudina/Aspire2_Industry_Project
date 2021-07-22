@@ -29,6 +29,11 @@
       }
     }
 
+    // delete previous records for the same period
+    $sql_delete = "DELETE FROM history_availability WHERE shift_date IN ($date_list)";
+    dbQuery($sql_delete);
+
+    // insert new records
     $sql = "INSERT INTO history_availability (id_class, id_user, shift_date) VALUES " . $data_string;
     //dbQuery - function in database.php
     dbQuery($sql);
