@@ -54,7 +54,6 @@
     $email_subject = "You are assigned to a job";
     $email_message = "Please check your shifts in the app";
 
-
     // $BodyMessage = '
     //   <html>
     //       <head>

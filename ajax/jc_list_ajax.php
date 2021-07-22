@@ -9,9 +9,7 @@ if($_POST['id_class'])
 	$jc_3      = $_POST["jc_3"];
 	$jc_4      = $_POST["jc_4"];
 
-// 	$query = $mysqli->query("SELECT * FROM car WHERE id=".$id);
-// 	$myrow = $query->fetch_assoc();
-
+    // modal window
         echo "
 
         <div class='modal-content'>
@@ -40,7 +38,6 @@ if($_POST['id_class'])
 
                   ";
                   // get available coaches
-                  // event_type.val();
                   $query = "SELECT a.id_user, u.first_name, u.last_name FROM availability a JOIN users u ON a.id_user = u.id_user WHERE a.id_class='$id_class'";
                   $list_result = dbQuery($query);
                   echo "
@@ -49,8 +46,7 @@ if($_POST['id_class'])
 
                         while($row_user = dbFetchAssoc($list_result)) {
                           extract($row_user);
-                            $selected = ($id_user == $jc_1) ? ' selected' : '';
-                          // echo "<option>" . $first_name . " " . $last_name . "</option>";
+                          $selected = ($id_user == $jc_1) ? ' selected' : '';
                           echo "<option ".$selected." value=" . $id_user .">" . $first_name . " " . $last_name . "</option>";
                         }
                   echo "
