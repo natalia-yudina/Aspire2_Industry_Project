@@ -18,14 +18,16 @@
 
     foreach($dataJson as $event => $massiv){
       foreach($massiv['jc_list']  as  $key => $value){
+        if ($value !== "0") {
+          $date_event = date("Y-m-d", strtotime($massiv['start']));
+          $data_string = $data_string . $separator . "(" . $massiv['ev_id_class'] . ", " . $value . ", '" . $date_event . "')";
 
-      $date_event = date("Y-m-d", strtotime($massiv['start']));
-      $data_string = $data_string . $separator . "(" . $massiv['ev_id_class'] . ", " . $value . ", '" . $date_event . "')";
+          // $date_array[] = $date_event;
+          $date_list = $date_list . $separator . "'" . $date_event . "'";
 
-      // $date_array[] = $date_event;
-      $date_list = $date_list . $separator . "'" . $date_event . "'";
+          $separator = ", ";
 
-      $separator = ", ";
+        }
       }
     }
 
