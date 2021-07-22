@@ -218,10 +218,10 @@ var event_id;
     var selected_jc3_id = $('#s3').val();
     var selected_jc4_id = $('#s4').val();
 
-    var selected_jc1_string = $("#s1 option:selected").text();
-    var selected_jc2_string = $("#s2 option:selected").text();
-    var selected_jc3_string = $("#s3 option:selected").text();
-    var selected_jc4_string = $("#s4 option:selected").text();
+    var selected_jc1_string = (selected_jc1_id !== '0') ? ($("#s1 option:selected").text()) : ("");
+    var selected_jc2_string = (selected_jc2_id !== '0') ? ($("#s2 option:selected").text()) : ("");
+    var selected_jc3_string = (selected_jc3_id !== '0') ? ($("#s3 option:selected").text()) : ("");
+    var selected_jc4_string = (selected_jc4_id !== '0') ? ($("#s4 option:selected").text()) : ("");
 
     event_to_update.jc_list =[];
     event_to_update.jc_list = [selected_jc1_id, selected_jc2_id, selected_jc3_id, selected_jc4_id];
