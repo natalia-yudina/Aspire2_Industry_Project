@@ -1,16 +1,11 @@
 <?php
-/***
-title: 'Meeting',
-              start: new Date(y, m, d, 10, 30),
-              allDay: false,
-              backgroundColor: "#0073b7", //Blue
-              borderColor: "#0073b7" //Blue
-*/
+
+//class for the events
 class Booking {
 
 	public $title;
 	public $start;
-	public $end;	
+	public $end;
 	public $allDay = false;
 	public $backgroundColor;
 	public $borderColor;
@@ -19,14 +14,17 @@ class Booking {
 	public $block = false;
 	public $description;
 
+	// list of the assigned junior coaches
 	public $jc_list;
+	// id_class
 	public $ev_id_class;
+	// head coach
 	public $hc;
+
 	public function __constructor($t, $s) {
 		$this->title = $t;
 		$this->start = $s;
 	}
-
 
 }
 ?>
