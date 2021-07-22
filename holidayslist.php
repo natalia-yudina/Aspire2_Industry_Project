@@ -5,7 +5,7 @@
 <?php
 $records = getHolidayRecords();
 ?>
-   
+
     <h5 class="pb-3"><i class="fas fa-circle ui-text p-2 fs-6"></i>Active Holidays</h5>
     <table class="table user-text table-bordered">
       <tr>
@@ -27,7 +27,7 @@ $records = getHolidayRecords();
       </tr>
       <?php } ?>
     </table>
-  
+
   <!-- /.box-body -->
   <div class="box-footer clearfix">
     <?php
@@ -37,7 +37,7 @@ $records = getHolidayRecords();
 <!-- /.box -->
 <script language="javascript">
 function deleteHoliday(hid) {
-	if(confirm('Deleting holiday will allows user to book that date.\n\nAre you sure you want to proceed ?')) {
+	if(confirm('Deleting holiday.\n\nAre you sure you want to proceed ?')) {
 		window.location.href = '<?php echo WEB_ROOT; ?>api/process.php?cmd=hdelete&hId='+hid;
 	}
 }
